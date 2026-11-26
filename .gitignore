@@ -11,10 +11,14 @@ backend/bin/
 backend/internal/web/dist/
 
 # ── 数据库与运行时数据 ──────────────────────────────────────────────────────
-backend/data/
-*.db
+# 提交项目基准数据库；仅忽略 SQLite 运行时 sidecar 与日志
+backend/data/*.db-wal
+backend/data/*.db-shm
+backend/data/*.db-journal
+backend/data/*.log
 *.db-shm
 *.db-wal
+*.db-journal
 
 # ── 环境变量与密钥 ──────────────────────────────────────────────────────────
 .env
@@ -36,5 +40,4 @@ playwright-report/
 *.tmp
 
 # ── 本地临时文件 ────────────────────────────────────────────────────────────
-/tmp/
 *.local
