@@ -29,7 +29,7 @@ export function DriverDocsCard({ driver, activeLease }: { driver: Driver; active
             <p className="mt-2 text-[10px] text-muted">租期 {formatDate(activeLease.start_date)} - {formatDate(activeLease.end_date)}</p>
             <ButtonLink to={`/leases/${activeLease.id}`} variant="secondary" size="sm" className="mt-3 w-full">查看租约</ButtonLink>
           </div>
-        ) : <p className="mt-4 rounded-lg border border-line bg-card2/30 px-3 py-6 text-center text-xs text-muted">当前没有生效租约，可创建新租约。</p>}
+        ) : <p className="info-tile mt-4 py-6 text-center text-xs text-muted">当前没有生效租约，可创建新租约。</p>}
       </Card>
     </aside>
   )

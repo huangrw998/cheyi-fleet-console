@@ -3,7 +3,7 @@ import { useToast } from '@/app/toast'
 import { useEffect, useState } from 'react'
 import type { DispatchCreateInput, Store, Vehicle } from '@/types'
 import { todayISO } from '@/lib/format'
-import { Button, DatePicker, Field, Input, Modal, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, Select } from '@/components/ui'
 
 
 export function DispatchModal({
@@ -66,7 +66,7 @@ export function DispatchModal({
         <Field label="计划日期"><DatePicker value={form.scheduled_at} onChange={(value) => setForm({ ...form, scheduled_at: value })} /></Field>
         <Field label="备注" className="sm:col-span-2"><Input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="调拨原因、司机安排等" /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

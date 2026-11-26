@@ -1,7 +1,7 @@
 import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import type { Store, StoreUpdateInput } from '@/types'
-import { Button, Field, Input, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, Field, InlineError, Input, Modal, NumberInput, Select } from '@/components/ui'
 
 
 export function StoreModal({ open, store, onClose, onSave, saving }: { open: boolean; store: Store | null; onClose: () => void; onSave: (id: number, input: StoreUpdateInput) => Promise<void>; saving: boolean }) {
@@ -39,7 +39,7 @@ export function StoreModal({ open, store, onClose, onSave, saving }: { open: boo
           </Select>
         </Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

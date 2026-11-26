@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, ShieldCheck } from '@phosphor-icons/react'
 import type { LoginFormValues } from './useLogin'
 import { useToast } from '@/app/toast'
-import { Button, Card, Field, Input, PasswordToggle } from '@/components/ui'
+import { Button, Card, Field, InlineError, Input, PasswordToggle } from '@/components/ui'
 import { detectCarrier, formatPhone } from '@/lib/phone'
 
 export function LoginForm({
@@ -49,7 +49,7 @@ export function LoginForm({
             <PasswordToggle visible={showPassword} onToggle={() => setShowPassword(!showPassword)} />
           </div>
         </Field>
-        {error ? <p className="rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+        <InlineError message={error} />
         <Button type="submit" variant="primary" size="lg" className="w-full" loading={submitting}>进入运营台 <ArrowRight size={16} /></Button>
       </form>
 

@@ -8,7 +8,7 @@ export function LeaseBillsCard({ bills }: { bills: Bill[] }) {
   return (
     <Card className="overflow-hidden">
       <CardToolbar className="flex items-center justify-between">
-        <div><h2 className="text-base font-semibold text-ink">账单记录</h2><p className="mt-1 text-xs text-muted">{bills.length} 期账单</p></div>
+        <div><h2 className="text-base font-semibold tracking-tight text-ink">账单记录</h2><p className="mt-1 text-xs text-muted">{bills.length} 期账单</p></div>
         <Link to="/finance" className="inline-flex items-center gap-1 text-xs text-accent hover:underline">去财务处理 <ArrowRight size={13} /></Link>
       </CardToolbar>
       <DataTable>

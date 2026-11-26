@@ -3,7 +3,7 @@ import { useToast } from '@/app/toast'
 import { useEffect, useState } from 'react'
 import type { MaintenanceCreateInput, Vehicle } from '@/types'
 import { todayISO } from '@/lib/format'
-import { Button, DatePicker, Field, Input, Modal, NumberInput, Select, Textarea } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, NumberInput, Select, Textarea } from '@/components/ui'
 
 
 const emptyForm = { vehicle_id: '', type: 'maintenance', scheduled_at: todayISO(), cost_cents: '0', vendor: '', mileage_km: '0', description: '' }
@@ -67,7 +67,7 @@ export function MaintenanceCreateModal({ open, onClose, onCreate, creating, vehi
         <Field label="当前里程（km）"><NumberInput value={form.mileage_km} onChange={(value) => setForm({ ...form, mileage_km: value })} suffix="km" min={0} step={100} /></Field>
         <Field label="工单说明" className="sm:col-span-2"><Textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="保养项目、故障描述、预计工期等" /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

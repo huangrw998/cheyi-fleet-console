@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
 import { CurrencyCny, Gauge, PencilSimple, ShieldCheck, SteeringWheel } from '@phosphor-icons/react'
 import type { Lease, Vehicle } from '@/types'
 import { daysText, daysUntil, formatDate, formatMoney } from '@/lib/format'
-import { Badge, Button, ButtonLink, Card, Stat, StatusBadge } from '@/components/ui'
+import { Badge, Button, ButtonLink, Card, Stat, StatCell, StatusBadge } from '@/components/ui'
 
 export function VehicleHeader({ vehicle, activeLease, onEdit }: { vehicle: Vehicle; activeLease?: Lease; onEdit: () => void }) {
   const insuranceDays = daysUntil(vehicle.insurance_expiry)
@@ -27,22 +26,15 @@ export function VehicleHeader({ vehicle, activeLease, onEdit }: { vehicle: Vehic
         </div>
       </div>
       <div className="grid grid-cols-2 divide-x divide-y divide-line sm:grid-cols-4 sm:divide-y-0">
-        <div className="group p-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="当前里程" value={vehicle.mileage_km.toLocaleString('zh-CN')} hint="km" icon={<Gauge size={16} />} /></div>
-        <div className="group p-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="保险到期" value={formatDate(vehicle.insurance_expiry)} hint={insuranceDays !== null ? daysText(insuranceDays) : ''} icon={<ShieldCheck size={16} />} /></div>
-        <div className="group p-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="当前月租" value={formatMoney(activeLease?.monthly_rent_cents ?? vehicle.model?.monthly_rent_cents ?? 0, true)} hint="在租租约" icon={<CurrencyCny size={16} />} /></div>
-        <div className="group p-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="当前租约" value={activeLease ? '生效中' : '无'} hint={activeLease?.driver?.name ?? '可立即分配'} icon={<SteeringWheel size={16} />} /></div>
+        <StatCell><Stat label="当前里程" value={vehicle.mileage_km.toLocaleString('zh-CN')} hint="km" icon={<Gauge size={16} />} /></StatCell>
+        <StatCell><Stat label="保险到期" value={formatDate(vehicle.insurance_expiry)} hint={insuranceDays !== null ? daysText(insuranceDays) : ''} icon={<ShieldCheck size={16} />} /></StatCell>
+        <StatCell><Stat label="当前月租" value={formatMoney(activeLease?.monthly_rent_cents ?? vehicle.model?.monthly_rent_cents ?? 0, true)} hint="在租租约" icon={<CurrencyCny size={16} />} /></StatCell>
+        <StatCell><Stat label="当前租约" value={activeLease ? '生效中' : '无'} hint={activeLease?.driver?.name ?? '可立即分配'} icon={<SteeringWheel size={16} />} /></StatCell>
       </div>
     </Card>
   )
 }
 
-export function VehicleEditButton({ onEdit }: { onEdit: () => void }) {
-  return <Button variant="secondary" onClick={onEdit}><PencilSimple size={15} /> 编辑档案</Button>
-}
-
-export function VehicleBackLink() {
-  return <Link to="/vehicles" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink">返回车辆资产</Link>
-}
 
 export function VehicleStatusCard({ vehicle, activeLease }: { vehicle: Vehicle; activeLease?: Lease }) {
   return (

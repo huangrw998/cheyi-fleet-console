@@ -3,7 +3,7 @@ import { useToast } from '@/app/toast'
 import { useEffect, useState } from 'react'
 import type { Vehicle, ViolationCreateInput } from '@/types'
 import { todayISO } from '@/lib/format'
-import { Button, DatePicker, Field, Input, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, NumberInput, Select } from '@/components/ui'
 
 
 const emptyForm = { vehicle_id: '', reason: '', location: '', fine_cents: '100', points: '0', occurred_at: todayISO() }
@@ -73,7 +73,7 @@ export function ViolationModal({
         <Field label="罚款（元）"><NumberInput value={form.fine_cents} onChange={(value) => setForm({ ...form, fine_cents: value })} suffix="元" min={0} step={50} /></Field>
         <Field label="扣分"><NumberInput value={form.points} onChange={(value) => setForm({ ...form, points: value })} suffix="分" min={0} max={12} /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

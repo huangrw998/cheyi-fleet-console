@@ -9,7 +9,7 @@ export function InsuranceCard({ insurance }: { insurance: InsurancePolicy[] }) {
   return (
     <Card className="overflow-hidden">
       <CardToolbar className="flex flex-wrap items-center justify-between gap-3">
-        <div><h2 className="text-base font-semibold text-ink">保险到期</h2><p className="mt-1 text-xs text-muted">按到期日排序，30 天内到期会在总览提醒。</p></div>
+        <div><h2 className="text-base font-semibold tracking-tight text-ink">保险到期</h2><p className="mt-1 text-xs text-muted">按到期日排序，30 天内到期会在总览提醒。</p></div>
         <Badge tone="warning">{expiring} 份即将到期</Badge>
       </CardToolbar>
       {insurance.length === 0 ? <EmptyState icon={<ShieldCheck size={22} />} title="暂无保单" description="保单数据会出现在这里。" /> : (

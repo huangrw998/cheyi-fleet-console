@@ -1,19 +1,19 @@
 import type { Store, Vehicle } from '@/types'
-import { Badge, Button } from '@/components/ui'
+import { Badge, Button, Card } from '@/components/ui'
 
 export function StoresTab({ stores, vehicles, onEdit }: { stores: Store[]; vehicles: Vehicle[]; onEdit: (store: Store) => void }) {
   return (
     <div className="p-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-ink">门店与容量</h2>
+          <h2 className="text-base font-semibold tracking-tight text-ink">门店与容量</h2>
           <p className="mt-1 text-xs text-muted">容量用于计算门店出租率和调度建议。</p>
         </div>
         <Badge tone="neutral">{stores.length} 个门店</Badge>
       </div>
       <div className="mt-5 grid gap-4 sm:grid-cols-2">
         {stores.map((store) => (
-          <div key={store.id} className="overflow-hidden rounded-xl border border-line bg-card2/20">
+          <Card key={store.id} className="overflow-hidden bg-card2/20 shadow-none">
             <div className="relative h-28 overflow-hidden">
               <img src={store.image} alt="" className="h-full w-full object-cover" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -32,7 +32,7 @@ export function StoresTab({ stores, vehicles, onEdit }: { stores: Store[]; vehic
               </div>
               <Button size="sm" variant="secondary" onClick={() => onEdit(store)}>编辑</Button>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>

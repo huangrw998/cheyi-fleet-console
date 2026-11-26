@@ -1,7 +1,7 @@
 import { CheckCircle, Receipt, ShieldWarning, Star, SteeringWheel } from '@phosphor-icons/react'
 import type { Bill, Driver, Lease, Violation } from '@/types'
 import { formatMoney } from '@/lib/format'
-import { Avatar, Button, ButtonLink, Card, Stat, StatusBadge } from '@/components/ui'
+import { Avatar, Button, ButtonLink, Card, Stat, StatCell, StatusBadge } from '@/components/ui'
 
 export function DriverHeader({ driver, leases, bills, violations, onEdit }: { driver: Driver; leases: Lease[]; bills: Bill[]; violations: Violation[]; onEdit: () => void }) {
   const paidTotal = bills.filter((bill) => bill.status === 'paid').reduce((sum, bill) => sum + bill.paid_amount_cents, 0)
@@ -28,10 +28,10 @@ export function DriverHeader({ driver, leases, bills, violations, onEdit }: { dr
         </div>
       </div>
       <div className="grid grid-cols-2 divide-x divide-y divide-line border-t border-line sm:grid-cols-4 sm:divide-y-0">
-        <div className="group px-5 py-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="租约总数" value={leases.length} icon={<Receipt size={15} />} /></div>
-        <div className="group px-5 py-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="已收租金" value={formatMoney(paidTotal, true)} icon={<CheckCircle size={15} />} /></div>
-        <div className="group px-5 py-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="待收账单" value={openBills.length} hint={formatMoney(openBills.reduce((sum, b) => sum + b.amount_cents, 0), true)} icon={<Receipt size={15} />} /></div>
-        <div className="group px-5 py-4 transition-colors duration-200 hover:bg-card2/50"><Stat label="违章记录" value={violations.length} icon={<ShieldWarning size={15} />} /></div>
+        <StatCell className="px-5"><Stat label="租约总数" value={leases.length} icon={<Receipt size={15} />} /></StatCell>
+        <StatCell className="px-5"><Stat label="已收租金" value={formatMoney(paidTotal, true)} icon={<CheckCircle size={15} />} /></StatCell>
+        <StatCell className="px-5"><Stat label="待收账单" value={openBills.length} hint={formatMoney(openBills.reduce((sum, b) => sum + b.amount_cents, 0), true)} icon={<Receipt size={15} />} /></StatCell>
+        <StatCell className="px-5"><Stat label="违章记录" value={violations.length} icon={<ShieldWarning size={15} />} /></StatCell>
       </div>
     </Card>
   )

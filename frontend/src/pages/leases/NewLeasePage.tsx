@@ -1,8 +1,8 @@
 import { errorText } from '@/lib/errors'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
 import { useToast } from '@/app/toast'
-import { Button, PageHeader } from '@/components/ui'
+import { BackLink, Button, PageHeader } from '@/components/ui'
 import { DriverStep } from './DriverStep'
 import { LeaseStepper } from './LeaseStepper'
 import { LeaseSummary } from './LeaseSummary'
@@ -33,7 +33,7 @@ export default function NewLeasePage() {
 
   return (
     <div className="space-y-5">
-      <Link to="/leases" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink"><ArrowLeft size={14} /> 返回租约列表</Link>
+      <BackLink to="/leases">返回租约列表</BackLink>
       <PageHeader title="新建租约" description="选司机、选车、确认费用，三步生成租约和首期账单。创建后车辆会被锁定。" />
 
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_340px]">

@@ -2,7 +2,7 @@ import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import { Key } from '@phosphor-icons/react'
 import type { PasswordInput, ProfileInput, SettingsData } from '@/types'
-import { Button, Field, Input, SectionHeader } from '@/components/ui'
+import { Button, Field, InlineError, Input, SectionHeader } from '@/components/ui'
 import { detectCarrier, isValidPhoneShape } from '@/lib/phone'
 
 export function AccountTab({
@@ -74,7 +74,7 @@ export function AccountTab({
           <div className="info-tile"><p className="text-[10px] text-muted">地址</p><p className="mt-1 text-xs text-ink">{company.address}</p></div>
         </div>
       </section>
-      {error ? <p className="rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger lg:col-span-2">{error}</p> : null}
+      <InlineError message={error} className="lg:col-span-2" />
     </div>
   )
 }

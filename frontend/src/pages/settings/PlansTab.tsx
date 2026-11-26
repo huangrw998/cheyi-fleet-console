@@ -7,7 +7,7 @@ export function PlansTab({ plans, onNew, onEdit }: { plans: PricingPlan[]; onNew
     <div>
       <CardToolbar className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-ink">价格方案</h2>
+          <h2 className="text-base font-semibold tracking-tight text-ink">价格方案</h2>
           <p className="mt-1 text-xs text-muted">新租约的月租和押金默认值，可在创建时调整。</p>
         </div>
         <Button size="sm" variant="primary" onClick={onNew}><Plus size={14} /> 新增方案</Button>

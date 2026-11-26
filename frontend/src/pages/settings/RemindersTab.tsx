@@ -2,7 +2,7 @@ import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import { ShieldCheck } from '@phosphor-icons/react'
 import type { RemindersInput, SettingsData } from '@/types'
-import { Button, Field, NumberInput, SectionHeader } from '@/components/ui'
+import { Button, Field, InlineError, NumberInput, SectionHeader } from '@/components/ui'
 
 
 export function RemindersTab({ reminders, onSave, saving }: { reminders: SettingsData['reminders']; onSave: (input: RemindersInput) => Promise<void>; saving: boolean }) {
@@ -32,7 +32,7 @@ export function RemindersTab({ reminders, onSave, saving }: { reminders: Setting
         <div className="mt-5 flex items-start gap-2 rounded-lg border border-info/20 bg-info-soft px-3 py-2 text-[11px] leading-5 text-info">
           <ShieldCheck size={15} className="mt-0.5 shrink-0" />规则保存后会立即作用于总览的风险提醒。当前环境不会发送短信或邮件。
         </div>
-        {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+        <InlineError message={error} className="mt-3" />
         <Button className="mt-5" variant="primary" loading={saving} onClick={() => void save()}>保存提醒规则</Button>
       </div>
     </div>

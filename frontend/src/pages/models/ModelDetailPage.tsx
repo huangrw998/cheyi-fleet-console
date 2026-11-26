@@ -1,6 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft } from '@phosphor-icons/react'
-import { ErrorState, Skeleton } from '@/components/ui'
+import { useParams } from 'react-router-dom'
+import { BackLink, ErrorState, Skeleton } from '@/components/ui'
 import { ModelFleetTable } from './ModelFleetTable'
 import { ModelMedia } from './ModelMedia'
 import { ModelRelated } from './ModelRelated'
@@ -21,7 +20,7 @@ export default function ModelDetailPage() {
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link to="/models" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink"><ArrowLeft size={14} /> 返回车型展厅</Link>
+        <BackLink to="/models">返回车型展厅</BackLink>
         <div className="flex items-center gap-2 text-[11px] text-muted"><span>{model.brand}</span><span>/</span><span className="text-ink">{model.name}</span></div>
       </div>
 

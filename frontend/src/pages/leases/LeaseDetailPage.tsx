@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft } from '@phosphor-icons/react'
+import { useParams } from 'react-router-dom'
 import { useToast } from '@/app/toast'
 import { errorText } from '@/lib/errors'
 import type { LeaseActionKind } from '@/types'
-import { ErrorState, Skeleton } from '@/components/ui'
+import { BackLink, ErrorState, Skeleton } from '@/components/ui'
 import { LeaseActionModal, defaultMileage } from './LeaseActionModal'
 import { LeaseBillsCard } from './LeaseBillsCard'
 import { LeaseHeader } from './LeaseHeader'
@@ -51,7 +50,7 @@ export default function LeaseDetailPage() {
 
   return (
     <div className="space-y-5">
-      <Link to="/leases" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink"><ArrowLeft size={14} /> 返回租约列表</Link>
+      <BackLink to="/leases">返回租约列表</BackLink>
       <LeaseHeader lease={lease} onAction={openAction} />
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
         <div className="min-w-0 space-y-5">

@@ -6,7 +6,7 @@ import { Button, Card, CardToolbar, DataTable, EmptyState, StatusBadge, Td, Th }
 export function DispatchTasksTable({ tasks, onComplete, completing }: { tasks: DispatchTask[]; onComplete: (id: number) => void; completing: boolean }) {
   return (
     <Card className="overflow-hidden">
-      <CardToolbar><h2 className="text-base font-semibold text-ink">调拨任务</h2><p className="mt-1 text-xs text-muted">从发起、在途到完成，车辆门店归属会随完成动作更新。</p></CardToolbar>
+      <CardToolbar><h2 className="text-base font-semibold tracking-tight text-ink">调拨任务</h2><p className="mt-1 text-xs text-muted">从发起、在途到完成，车辆门店归属会随完成动作更新。</p></CardToolbar>
       {tasks.length === 0 ? <EmptyState icon={<ArrowsLeftRight size={22} />} title="暂无调拨任务" description="从车辆池发起第一个调拨。" /> : (
         <DataTable>
           <thead><tr><Th>任务号</Th><Th>车辆</Th><Th>调拨路径</Th><Th>计划日期</Th><Th>状态</Th><Th>操作</Th></tr></thead>

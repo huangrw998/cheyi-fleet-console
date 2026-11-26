@@ -2,7 +2,7 @@ import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import type { Bill, PayBillInput } from '@/types'
 import { billTypeLabel, formatMoney, todayISO } from '@/lib/format'
-import { Button, DatePicker, Field, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Modal, NumberInput, Select } from '@/components/ui'
 
 
 export function PayBillModal({ bill, onClose, onPay, paying }: { bill: Bill | null; onClose: () => void; onPay: (id: number, input: PayBillInput) => Promise<void>; paying: boolean }) {
@@ -50,7 +50,7 @@ export function PayBillModal({ bill, onClose, onPay, paying }: { bill: Bill | nu
         <Field label="收款日期"><DatePicker value={form.paid_at} onChange={(value) => setForm({ ...form, paid_at: value })} /></Field>
         <Field label="收款金额（元）" className="sm:col-span-2"><NumberInput value={form.amount_cents} onChange={(value) => setForm({ ...form, amount_cents: value })} suffix="元" min={0} step={100} /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

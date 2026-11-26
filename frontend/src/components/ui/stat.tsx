@@ -37,6 +37,10 @@ export function Stat({
   )
 }
 
+export function StatCell({ children, className }: { children: ReactNode; className?: string }) {
+  return <div className={cn('group p-4 transition-colors duration-200 hover:bg-card2/50', className)}>{children}</div>
+}
+
 export interface StatItem {
   label: string
   value: ReactNode
@@ -58,9 +62,9 @@ export function StatStrip({ items, columns = 4, className }: { items: StatItem[]
     <Card className={cn('overflow-hidden', className)}>
       <div className={cn('grid grid-cols-2 divide-x divide-y divide-line xl:divide-y-0', columnClasses[columns] ?? columnClasses[4])}>
         {items.map((item) => (
-          <div key={item.label} className="group p-4 transition-colors duration-200 hover:bg-card2/50">
+          <StatCell key={item.label}>
             <Stat {...item} />
-          </div>
+          </StatCell>
         ))}
       </div>
     </Card>

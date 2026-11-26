@@ -2,7 +2,7 @@ import { errorText } from '@/lib/errors'
 import { useToast } from '@/app/toast'
 import { useState } from 'react'
 import type { DriverCreateInput } from '@/types'
-import { Button, DatePicker, Field, Input, Modal, NumberInput, Select, Textarea } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, NumberInput, Select, Textarea } from '@/components/ui'
 
 
 const emptyForm = {
@@ -74,7 +74,7 @@ export function DriverCreateModal({
         <Field label="紧急联系人"><Input value={form.emergency_contact} onChange={(e) => setForm({ ...form, emergency_contact: e.target.value })} /></Field>
         <Field label="备注" className="sm:col-span-2"><Textarea value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="审核记录、特殊情况等" /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

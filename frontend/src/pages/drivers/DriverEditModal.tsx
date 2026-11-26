@@ -1,7 +1,7 @@
 import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import type { Driver, DriverUpdateInput } from '@/types'
-import { Button, DatePicker, Field, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Modal, NumberInput, Select } from '@/components/ui'
 
 
 export function DriverEditModal({ open, driver, onClose, onSave, saving }: { open: boolean; driver?: Driver; onClose: () => void; onSave: (input: DriverUpdateInput) => Promise<void>; saving: boolean }) {
@@ -38,7 +38,7 @@ export function DriverEditModal({ open, driver, onClose, onSave, saving }: { ope
         <Field label="驾照到期日"><DatePicker value={form.license_expiry} onChange={(value) => setForm({ ...form, license_expiry: value })} /></Field>
         <Field label="服务评分"><NumberInput value={form.rating} onChange={(value) => setForm({ ...form, rating: value })} min={0} max={5} step={0.1} precision={1} /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

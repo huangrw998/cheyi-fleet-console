@@ -37,7 +37,7 @@ export default function DashboardPage() {
         actions={<><Button variant="secondary" onClick={() => navigate('/models')}><Images size={16} /> 车型展厅</Button><Button variant="primary" onClick={() => navigate('/leases/new')}><Plus size={16} /> 新建租约</Button></>}
       />
 
-      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-lg border border-line bg-card2/30 px-4 py-2 text-[11px] text-muted">
+      <div className="info-tile-compact flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-muted">
         <span className="inline-flex items-center gap-1.5"><span className={online ? 'h-1.5 w-1.5 rounded-full bg-success' : 'h-1.5 w-1.5 rounded-full bg-danger'} />{online ? '服务在线' : '服务异常'}</span>
         <span>{dashboard.month_label}</span>
         <span>车队规模 <span className="font-mono text-ink">{dashboard.kpis.total_vehicles}</span> 台</span>

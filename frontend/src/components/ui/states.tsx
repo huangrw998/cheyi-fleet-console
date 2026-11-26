@@ -30,6 +30,11 @@ export function EmptyState({
   )
 }
 
+export function InlineError({ message, className }: { message?: string; className?: string }) {
+  if (!message) return null
+  return <p role="alert" className={cn('rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs leading-5 text-danger', className)}>{message}</p>
+}
+
 export function ErrorState({ message, onRetry }: { message?: string; onRetry?: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 px-6 py-14 text-center">

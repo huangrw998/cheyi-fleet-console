@@ -4,7 +4,7 @@ import { ArrowRight, UserPlus } from '@phosphor-icons/react'
 import type { RegisterFormValues } from './useRegister'
 import { detectCarrier } from '@/lib/phone'
 import { useToast } from '@/app/toast'
-import { Button, Checkbox, Field, Input, PasswordToggle } from '@/components/ui'
+import { Button, Checkbox, Field, InlineError, Input, PasswordToggle } from '@/components/ui'
 
 export function RegisterForm({
   form,
@@ -61,7 +61,7 @@ export function RegisterForm({
           <Checkbox checked={agreed} onChange={setAgreed} label="我已知晓并同意账号使用规范。" />
         </div>
 
-        {error ? <p role="alert" className="rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+        <InlineError message={error} />
         <Button type="submit" variant="primary" size="lg" className="w-full" loading={submitting}>注册并进入运营台 <ArrowRight size={16} /></Button>
       </form>
 

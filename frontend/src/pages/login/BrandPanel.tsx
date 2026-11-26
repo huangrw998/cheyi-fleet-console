@@ -16,8 +16,8 @@ export function BrandPanel({ stats, online = true }: { stats?: { vehicles: numbe
           <p className="mt-5 max-w-md text-sm leading-7 text-white/65">从车型展厅到租约交付，从租金账单到维保保险，驰驿把网约车租赁的日常运营收进一个清晰的工作台。</p>
           <div className="mt-8 grid max-w-lg grid-cols-3 gap-3">
             {[
-              { label: '在营车辆', value: stats?.vehicles ?? '—' },
-              { label: '认证司机', value: stats?.drivers ?? '—' },
+              { label: '车队车辆', value: stats?.vehicles ?? '—' },
+              { label: '司机总数', value: stats?.drivers ?? '—' },
               { label: '活跃租约', value: stats?.active_leases ?? '—' },
             ].map((item) => (
               <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"><p className="font-mono text-xl font-semibold text-white">{item.value}</p><p className="mt-1 text-[10px] text-white/50">{item.label}</p></div>

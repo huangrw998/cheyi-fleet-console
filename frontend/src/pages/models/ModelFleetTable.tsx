@@ -8,7 +8,7 @@ export function ModelFleetTable({ vehicles, availableCount, slug }: { vehicles: 
   return (
     <Card id="model-vehicles" className="overflow-hidden">
       <CardToolbar className="flex flex-wrap items-center justify-between gap-3">
-        <div><h2 className="text-base font-semibold text-ink">在库车辆</h2><p className="mt-1 text-xs text-muted">{vehicles.length} 台 · {availableCount} 台可立即出租</p></div>
+        <div><h2 className="text-base font-semibold tracking-tight text-ink">在库车辆</h2><p className="mt-1 text-xs text-muted">{vehicles.length} 台 · {availableCount} 台可立即出租</p></div>
         <ButtonLink to={`/leases/new?model=${slug}`} variant="soft" size="sm">用这款车创建租约 <ArrowRight size={13} /></ButtonLink>
       </CardToolbar>
       <DataTable>

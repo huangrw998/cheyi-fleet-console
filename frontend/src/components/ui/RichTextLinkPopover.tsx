@@ -54,7 +54,7 @@ export function RichTextLinkPopover({
       style={style}
       role="dialog"
       aria-label="插入链接"
-      className="animate-fade-up rounded-xl border border-line bg-card p-3 shadow-card"
+      className="popover-panel p-3"
       onKeyDown={(event) => {
         if (event.key === 'Escape') {
           event.preventDefault()

@@ -37,7 +37,7 @@ export default function CreditsPage() {
         <CardToolbar className="flex items-center gap-2">
           <ImageSquare size={18} className="text-accent" />
           <div>
-            <h2 className="text-base font-semibold text-ink">车型实拍图</h2>
+            <h2 className="text-base font-semibold tracking-tight text-ink">车型实拍图</h2>
             <p className="mt-0.5 text-xs text-muted">{data.models.length} 款车型 · Wikimedia Commons</p>
           </div>
         </CardToolbar>
@@ -71,7 +71,7 @@ export default function CreditsPage() {
           <CardToolbar className="flex items-center gap-2">
             <Cube size={18} className="text-accent" />
             <div>
-              <h2 className="text-base font-semibold text-ink">3D 车身模型</h2>
+              <h2 className="text-base font-semibold tracking-tight text-ink">3D 车身模型</h2>
               <p className="mt-0.5 text-xs text-muted">通用车身，非具体车型 CAD</p>
             </div>
           </CardToolbar>
@@ -95,7 +95,7 @@ export default function CreditsPage() {
           <CardToolbar className="flex items-center gap-2">
             <ImageSquare size={18} className="text-accent" />
             <div>
-              <h2 className="text-base font-semibold text-ink">场景图片</h2>
+              <h2 className="text-base font-semibold tracking-tight text-ink">场景图片</h2>
               <p className="mt-0.5 text-xs text-muted">门店与氛围图 · Unsplash</p>
             </div>
           </CardToolbar>

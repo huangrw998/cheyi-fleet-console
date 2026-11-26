@@ -5,7 +5,7 @@ import { dispatchStatusColumns } from './useDispatch'
 export function StoreMatrix({ matrix }: { matrix: { store: Store; row: Record<string, number> }[] }) {
   return (
     <div>
-      <CardToolbar><h2 className="text-base font-semibold text-ink">门店库存矩阵</h2><p className="mt-1 text-xs text-muted">按车辆状态统计，帮助判断调拨方向。</p></CardToolbar>
+      <CardToolbar><h2 className="text-base font-semibold tracking-tight text-ink">门店库存矩阵</h2><p className="mt-1 text-xs text-muted">按车辆状态统计，帮助判断调拨方向。</p></CardToolbar>
       <DataTable>
         <thead><tr><Th>门店</Th>{dispatchStatusColumns.map((column) => <Th key={column.key} className="text-center">{column.label}</Th>)}<Th className="text-center">容量</Th></tr></thead>
         <tbody>

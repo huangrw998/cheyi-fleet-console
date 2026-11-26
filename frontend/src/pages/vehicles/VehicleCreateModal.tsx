@@ -2,7 +2,7 @@ import { errorText } from '@/lib/errors'
 import { useToast } from '@/app/toast'
 import { useState } from 'react'
 import type { Store, VehicleCreateInput, VehicleModel } from '@/types'
-import { Button, DatePicker, Field, Input, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, NumberInput, Select } from '@/components/ui'
 
 const emptyForm = {
   plate_no: '',
@@ -101,7 +101,7 @@ export function VehicleCreateModal({
         <Field label="年检到期日"><DatePicker value={form.inspection_expiry} onChange={(value) => setForm({ ...form, inspection_expiry: value })} /></Field>
         <Field label="VIN" className="sm:col-span-2"><Input value={form.vin} onChange={(e) => setForm({ ...form, vin: e.target.value })} placeholder="17 位车架号" /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

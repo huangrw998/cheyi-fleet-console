@@ -107,7 +107,7 @@ export function AreaChart({
         </svg>
         {active && activePoint ? (
           <div
-            className="pointer-events-none absolute z-10 min-w-28 -translate-x-1/2 -translate-y-[110%] rounded-lg border border-line bg-card/95 px-3 py-2 shadow-card backdrop-blur animate-fade-up"
+            className="popover-panel pointer-events-none absolute z-10 min-w-28 -translate-x-1/2 -translate-y-[110%] px-3 py-2 backdrop-blur"
             style={{ left: `${tooltipLeft}%`, top: `${tooltipTop}%` }}
           >
             <p className="text-[10px] text-muted">{active.label}</p>

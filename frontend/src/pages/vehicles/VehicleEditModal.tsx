@@ -1,7 +1,7 @@
 import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import type { Vehicle, VehicleUpdateInput } from '@/types'
-import { Button, DatePicker, Field, Input, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, DatePicker, Field, InlineError, Input, Modal, NumberInput, Select } from '@/components/ui'
 
 
 export function VehicleEditModal({
@@ -69,7 +69,7 @@ export function VehicleEditModal({
         <Field label="保险到期日"><DatePicker value={form.insurance_expiry} onChange={(value) => setForm({ ...form, insurance_expiry: value })} /></Field>
         <Field label="备注" className="sm:col-span-2"><Input value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="车辆状况或运营备注" /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

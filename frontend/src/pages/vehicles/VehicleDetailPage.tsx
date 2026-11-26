@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft } from '@phosphor-icons/react'
+import { useParams } from 'react-router-dom'
 import { useToast } from '@/app/toast'
 import { errorText } from '@/lib/errors'
 import type { VehicleUpdateInput } from '@/types'
-import { Card, CardToolbar, ErrorState, Skeleton, Tabs } from '@/components/ui'
+import { BackLink, Card, CardToolbar, ErrorState, Skeleton, Tabs } from '@/components/ui'
 import { VehicleEditModal } from './VehicleEditModal'
 import { VehicleHeader } from './VehicleHeader'
 import { VehicleInsuranceTab } from './VehicleInsuranceTab'
@@ -47,7 +46,7 @@ export default function VehicleDetailPage() {
 
   return (
     <div className="space-y-5">
-      <Link to="/vehicles" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink"><ArrowLeft size={14} /> 返回车辆资产</Link>
+      <BackLink to="/vehicles">返回车辆资产</BackLink>
 
       <VehicleHeader vehicle={vehicle} activeLease={activeLease} onEdit={() => setEditOpen(true)} />
 

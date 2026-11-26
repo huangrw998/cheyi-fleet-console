@@ -9,7 +9,7 @@ export function ViolationsCard({ violations, onHandle, handling }: { violations:
     <Card className="overflow-hidden">
       <CardToolbar className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h2 className="text-base font-semibold text-ink">违章记录</h2>
+          <h2 className="text-base font-semibold tracking-tight text-ink">违章记录</h2>
           <p className="mt-1 text-xs text-muted">处理违章后会为当前生效租约生成一张待收违章账单。</p>
         </div>
         <Badge tone="warning">{violations.filter((v) => v.status === 'pending').length} 条待处理</Badge>

@@ -59,14 +59,14 @@ export default function ReportsPage() {
       <div className="grid gap-5 xl:grid-cols-12">
         <Card className="p-5 xl:col-span-8">
           <div className="flex flex-wrap items-start justify-between gap-3">
-            <div><h2 className="text-base font-semibold text-ink">收入与出租率趋势</h2><p className="mt-1 text-xs text-muted">按在租租约折算的日收入与每日出租率</p></div>
+            <div><h2 className="text-base font-semibold tracking-tight text-ink">收入与出租率趋势</h2><p className="mt-1 text-xs text-muted">按在租租约折算的日收入与每日出租率</p></div>
             <Badge tone="accent">{data.trend.length} 天</Badge>
           </div>
           <AreaChart className="mt-5" data={state.chartData} format={(value) => formatMoney(value)} height={280} />
         </Card>
 
         <Card className="p-5 xl:col-span-4">
-          <div><h2 className="text-base font-semibold text-ink">车型收入贡献</h2><p className="mt-1 text-xs text-muted">按已收租金账单统计</p></div>
+          <div><h2 className="text-base font-semibold tracking-tight text-ink">车型收入贡献</h2><p className="mt-1 text-xs text-muted">按已收租金账单统计</p></div>
           <BarsChart
             className="mt-5"
             data={data.revenue_by_model.slice(0, 8).map((item, index) => ({ label: item.name, value: item.revenue_cents, color: index === 0 ? 'var(--chart-1)' : index === 1 ? 'var(--chart-3)' : 'var(--chart-2)' }))}
@@ -75,7 +75,7 @@ export default function ReportsPage() {
         </Card>
 
         <Card className="overflow-hidden xl:col-span-12">
-          <CardToolbar><h2 className="text-base font-semibold text-ink">门店经营排行</h2><p className="mt-1 text-xs text-muted">按已收收入排序，同时看容量利用情况。</p></CardToolbar>
+          <CardToolbar><h2 className="text-base font-semibold tracking-tight text-ink">门店经营排行</h2><p className="mt-1 text-xs text-muted">按已收收入排序，同时看容量利用情况。</p></CardToolbar>
           <DataTable>
             <thead><tr><Th>排名</Th><Th>门店</Th><Th>车辆</Th><Th>在租</Th><Th>出租率</Th><Th>已收收入</Th><Th>经营状态</Th></tr></thead>
             <tbody>

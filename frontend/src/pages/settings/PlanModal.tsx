@@ -1,7 +1,7 @@
 import { errorText } from '@/lib/errors'
 import { useEffect, useState } from 'react'
 import type { PlanInput, PricingPlan } from '@/types'
-import { Button, Field, Input, Modal, NumberInput, Select } from '@/components/ui'
+import { Button, Field, InlineError, Input, Modal, NumberInput, Select } from '@/components/ui'
 
 
 export type PlanModalValue = PricingPlan | 'new' | null
@@ -59,7 +59,7 @@ export function PlanModal({ value, onClose, onSave, saving }: { value: PlanModal
         <Field label="月租（元）"><NumberInput value={form.monthly_rent_cents} onChange={(value) => setForm({ ...form, monthly_rent_cents: value })} suffix="元" min={0} step={100} /></Field>
         <Field label="押金（元）"><NumberInput value={form.deposit_cents} onChange={(value) => setForm({ ...form, deposit_cents: value })} suffix="元" min={0} step={500} /></Field>
       </div>
-      {error ? <p className="mt-3 rounded-lg border border-danger/20 bg-danger-soft px-3 py-2 text-xs text-danger">{error}</p> : null}
+      <InlineError message={error} className="mt-3" />
     </Modal>
   )
 }

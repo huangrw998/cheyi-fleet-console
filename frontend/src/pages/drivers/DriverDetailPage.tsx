@@ -1,10 +1,9 @@
 import { useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { ArrowLeft } from '@phosphor-icons/react'
+import { useParams } from 'react-router-dom'
 import { useToast } from '@/app/toast'
 import { errorText } from '@/lib/errors'
 import type { DriverUpdateInput } from '@/types'
-import { ErrorState, Skeleton } from '@/components/ui'
+import { BackLink, ErrorState, Skeleton } from '@/components/ui'
 import { DriverBillsCard } from './DriverBillsCard'
 import { DriverDocsCard } from './DriverDocsCard'
 import { DriverEditModal } from './DriverEditModal'
@@ -38,7 +37,7 @@ export default function DriverDetailPage() {
 
   return (
     <div className="space-y-5">
-      <Link to="/drivers" className="inline-flex items-center gap-1.5 text-xs text-muted transition hover:text-ink"><ArrowLeft size={14} /> 返回司机管理</Link>
+      <BackLink to="/drivers">返回司机管理</BackLink>
       <DriverHeader driver={driver} leases={leases} bills={bills} violations={violations} onEdit={() => setEditOpen(true)} />
       <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
         <div className="min-w-0 space-y-5">

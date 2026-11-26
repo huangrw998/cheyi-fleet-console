@@ -9,7 +9,7 @@ export function DriverLeasesCard({ leases }: { leases: Lease[] }) {
   return (
     <Card className="overflow-hidden">
       <CardToolbar className="flex items-center justify-between">
-        <div><h2 className="text-base font-semibold text-ink">租约历史</h2><p className="mt-1 text-xs text-muted">共 {leases.length} 份租约</p></div>
+        <div><h2 className="text-base font-semibold tracking-tight text-ink">租约历史</h2><p className="mt-1 text-xs text-muted">共 {leases.length} 份租约</p></div>
         {active ? <Link to={`/leases/${active.id}`} className="inline-flex items-center gap-1 text-xs text-accent hover:underline">当前租约 <ArrowRight size={13} /></Link> : null}
       </CardToolbar>
       <DataTable>
