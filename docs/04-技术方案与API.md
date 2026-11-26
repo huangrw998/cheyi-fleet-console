@@ -81,7 +81,7 @@ cheyi-fleet-console/
 | `PORT` | `8080` | API 端口，开发脚本使用 8090 |
 | `BACKEND_PORT` | `8090` | `start.sh` 使用的后端端口，会同步给 Vite 代理 |
 | `FRONTEND_PORT` | `5174` | `start.sh` 使用的 Vite 端口 |
-| `DB_PATH` | `data/cheyi.db` | SQLite 路径 |
+| `DB_PATH` | `backend/data/cheyi.db` | SQLite 路径（项目根目录相对路径） |
 | `JWT_SECRET` | 默认密钥 | 生产必须替换 |
 | `APP_ENV` | `development` | `production` 时启用静态托管与 Secure Cookie |
 
@@ -101,8 +101,7 @@ make dev
 
 ```bash
 make build
-cd backend
-APP_ENV=production PORT=8090 DB_PATH=./data/cheyi.db ./cheyi-server
+APP_ENV=production PORT=8090 DB_PATH=backend/data/cheyi.db ./backend/cheyi-server
 ```
 
 ---
@@ -859,8 +858,7 @@ make build
 启动：
 
 ```bash
-cd backend
-APP_ENV=production PORT=8090 DB_PATH=./data/cheyi.db ./cheyi-server
+APP_ENV=production PORT=8090 DB_PATH=backend/data/cheyi.db ./backend/cheyi-server
 ```
 
 静态托管：

@@ -19,10 +19,10 @@
 
 ## 2. 上下文探索结论
 
-- 工作区：`/home/ht/MyAdmin/MyWorkers/worker-3`
-- 参考先例：`for-mine/online-toolbox` 有完整的 Brainstorming、PRD、交互文档和 React + Vite + Tailwind 工程，可复用文档结构与工程规范。
-- Brainstorming 技能文件：`/home/ht/Downloads/brainstorming-SKILL.md`
-- 视觉技能：`/home/ht/MyAdmin/MyWorkers/worker-3/ai-cowork-toolkit/skill-pack/taste-skill/SKILL.md`
+- 工作区：`cheyi-fleet-console/`
+- 参考先例：同类 B 端工具项目已有完整的 Brainstorming、PRD、交互文档和 React + Vite + Tailwind 工程，可复用文档结构与工程规范。
+- Brainstorming 技能：使用内置 brainstorming 技能。
+- 视觉方法：使用内置 design-taste-frontend 技能。
 - 环境：Node v24.14.0、npm 11.9.0、Go 1.27.1、SQLite。
 - 3D 资产实测：
   - Innerscene CC0 通用轿车 627KB，可直接下载。
@@ -52,7 +52,7 @@
 
 | # | 问题 | 决策 |
 |---|---|---|
-| 6 | 品牌与目录 | 驰驿 CHEYI，`for-mine/cheyi-fleet-console` |
+| 6 | 品牌与目录 | 驰驿 CHEYI，`cheyi-fleet-console/` |
 | 7 | 视觉基调 | 亮暗双主题 |
 | 8 | 交互深度 | 接后端，Go + Gin，前端 `frontend/`，后端 `backend/`，支持真实操作与点击 |
 | 9 | 页面清单 | 按 9 页锁定，后续新增车型展厅为第 10 页 |

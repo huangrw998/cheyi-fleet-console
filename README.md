@@ -49,7 +49,7 @@ make dev                 # 兼容原有开发脚本
 
 端口可通过 `BACKEND_PORT` / `FRONTEND_PORT` 覆盖，Vite 代理会同步到后端端口。
 
-首次启动会自动创建 SQLite 数据库并写入系统数据。重置数据：
+数据库固定存放在 `backend/data/cheyi.db`，基准运营数据随仓库提交；首次启动时会自动建表并补种缺失数据。重置数据：
 
 ```bash
 make reset-db
@@ -68,7 +68,6 @@ make reset-db
 - [09 手机号认证与交互组件](docs/09-手机号认证与交互组件.md)
 - [10 前后端拆分方案与文件结构](docs/10-前后端拆分方案与文件结构.md)
 - [12 性能优化与 Toast 体系](docs/12-性能优化与Toast体系.md)
-- [10 前后端拆分方案与文件结构](docs/10-前后端拆分方案与文件结构.md)
 
 ## 功能模块
 
@@ -101,8 +100,7 @@ make reset-db
 
 ```bash
 make build
-cd backend
-APP_ENV=production PORT=8090 DB_PATH=./data/cheyi.db ./cheyi-server
+APP_ENV=production PORT=8090 DB_PATH=backend/data/cheyi.db ./backend/cheyi-server
 ```
 
 打开 http://localhost:8090，前端与 API 同端口。
