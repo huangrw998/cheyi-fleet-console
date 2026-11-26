@@ -1,0 +1,217 @@
+{
+  "updated_at": "2026-11-25",
+  "note": "车型图片来自 Wikimedia Commons，3D 模型来自 Innerscene，场景图片来自 Unsplash。所有素材均标注来源与许可证。商用前请再次核对许可证并替换为已授权素材。",
+  "models": [
+    {
+      "slug": "byd-qin-plus-ev",
+      "name": "比亚迪 秦PLUS EV",
+      "source": "Wikimedia Commons",
+      "file": "File:BYD Qin Plus EV 005.jpg",
+      "author": "Quzhouliulian",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:BYD_Qin_Plus_EV_005.jpg"
+    },
+    {
+      "slug": "aion-s-plus",
+      "name": "广汽埃安 AION S Plus",
+      "source": "Wikimedia Commons",
+      "file": "File:Aion S Plus IMG008.jpg",
+      "author": "Anonymousfox36",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Aion_S_Plus_IMG008.jpg"
+    },
+    {
+      "slug": "caocao-60",
+      "name": "吉利 曹操60",
+      "source": "Wikimedia Commons",
+      "file": "File:Maple Cao Cao 60 001.jpg",
+      "author": "JustAnotherCarDesigner",
+      "license": "CC0",
+      "url": "https://commons.wikimedia.org/wiki/File:Maple_Cao_Cao_60_001.jpg"
+    },
+    {
+      "slug": "hongqi-e-qm5",
+      "name": "红旗 E-QM5",
+      "source": "Wikimedia Commons",
+      "file": "File:Hongqi E-QM5 004.jpg",
+      "author": "JustAnotherCarDesigner",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Hongqi_E-QM5_004.jpg"
+    },
+    {
+      "slug": "fengshen-e70",
+      "name": "东风风神 E70",
+      "source": "Wikimedia Commons",
+      "file": "File:Dongfeng Fengshen E70 China 2018-03-28.jpg",
+      "author": "Navigator84",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Dongfeng_Fengshen_E70_China_2018-03-28.jpg"
+    },
+    {
+      "slug": "baic-eu5",
+      "name": "北汽新能源 EU5",
+      "source": "Wikimedia Commons",
+      "file": "File:BAIC EU5 Plus 2026.jpg",
+      "author": "RL GNZLZ",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:BAIC_EU5_Plus_2026.jpg"
+    },
+    {
+      "slug": "changan-eado-ev",
+      "name": "长安 逸动EV",
+      "source": "Wikimedia Commons",
+      "file": "File:Changan Eado EV II facelift 001.jpg",
+      "author": "Chinese Car Culture",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Changan_Eado_EV_II_facelift_001.jpg"
+    },
+    {
+      "slug": "xpeng-p5",
+      "name": "小鹏 P5",
+      "source": "Wikimedia Commons",
+      "file": "File:XPeng P5 2021112001.jpg",
+      "author": "Evnerd",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:XPeng_P5_2021112001.jpg"
+    },
+    {
+      "slug": "roewe-ei5",
+      "name": "荣威 Ei5",
+      "source": "Wikimedia Commons",
+      "file": "File:Roewe Ei5 facelift 004.jpg",
+      "author": "Jengtingchen",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Roewe_Ei5_facelift_004.jpg"
+    },
+    {
+      "slug": "aion-y-plus",
+      "name": "广汽埃安 AION Y Plus",
+      "source": "Wikimedia Commons",
+      "file": "File:Aion Y and Aion Y Plus 001.jpg",
+      "author": "JustAnotherCarDesigner",
+      "license": "CC0",
+      "url": "https://commons.wikimedia.org/wiki/File:Aion_Y_and_Aion_Y_Plus_001.jpg"
+    },
+    {
+      "slug": "neta-u",
+      "name": "哪吒 U",
+      "source": "Wikimedia Commons",
+      "file": "File:Neta U 001.jpg",
+      "author": "Jengtingchen",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Neta_U_001.jpg"
+    },
+    {
+      "slug": "byd-yuan-plus",
+      "name": "比亚迪 元PLUS",
+      "source": "Wikimedia Commons",
+      "file": "File:BYD Yuan Plus II 007.jpg",
+      "author": "JustAnotherCarDesigner",
+      "license": "CC0",
+      "url": "https://commons.wikimedia.org/wiki/File:BYD_Yuan_Plus_II_007.jpg"
+    },
+    {
+      "slug": "byd-d1",
+      "name": "比亚迪 D1",
+      "source": "Wikimedia Commons",
+      "file": "File:2020 BYD D1 (front).jpg",
+      "author": "User3204",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:2020_BYD_D1_(front).jpg"
+    },
+    {
+      "slug": "buick-velite-6",
+      "name": "别克 微蓝6",
+      "source": "Wikimedia Commons",
+      "file": "File:BUICK VELITE 6 China (2).jpg",
+      "author": "Dinkun Chen",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:BUICK_VELITE_6_China_(2).jpg"
+    },
+    {
+      "slug": "volkswagen-id3",
+      "name": "大众 ID.3",
+      "source": "Wikimedia Commons",
+      "file": "File:2020 Volkswagen ID.3 1st Front.jpg",
+      "author": "Vauxford",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:2020_Volkswagen_ID.3_1st_Front.jpg"
+    },
+    {
+      "slug": "tesla-model-3",
+      "name": "特斯拉 Model 3",
+      "source": "Wikimedia Commons",
+      "file": "File:Tesla Model 3 (2023) Autofrühling Ulm IMG 9282.jpg",
+      "author": "Alexander-93",
+      "license": "CC BY-SA 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Tesla_Model_3_(2023)_Autofr%C3%BChling_Ulm_IMG_9282.jpg"
+    }
+  ],
+  "models3d": [
+    {
+      "key": "sedan",
+      "name": "通用轿车",
+      "source": "Innerscene",
+      "license": "CC0",
+      "url": "https://www.innerscene.com/tools/library/3d-parts/sedan-car-42109739"
+    },
+    {
+      "key": "suv",
+      "name": "通用紧凑 SUV",
+      "source": "Innerscene",
+      "license": "CC0",
+      "url": "https://www.innerscene.com/tools/library/3d-parts/generic-compact-suv-9f157ee5"
+    },
+    {
+      "key": "mpv",
+      "name": "通用 MPV",
+      "source": "Innerscene",
+      "license": "CC0",
+      "url": "https://www.innerscene.com/tools/library/3d-parts/generic-minivan-mpv-ef315aef"
+    },
+    {
+      "key": "hatchback",
+      "name": "通用两厢",
+      "source": "Innerscene",
+      "license": "CC0",
+      "url": "https://www.innerscene.com/tools/library/3d-parts/generic-electric-hatchback-6f7e33fa"
+    },
+    {
+      "key": "wagon",
+      "name": "通用旅行车",
+      "source": "Innerscene",
+      "license": "CC0",
+      "url": "https://www.innerscene.com/tools/library/3d-parts/generic-station-wagon-estate-car-dec07098"
+    }
+  ],
+  "scenes": [
+    {
+      "file": "/media/stores/store-1.webp",
+      "name": "充电场景",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "url": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7"
+    },
+    {
+      "file": "/media/stores/store-2.webp",
+      "name": "停车场",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "url": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a"
+    },
+    {
+      "file": "/media/stores/store-3.webp",
+      "name": "城市街道",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "url": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000"
+    },
+    {
+      "file": "/media/stores/store-4.webp",
+      "name": "城市建筑",
+      "source": "Unsplash",
+      "license": "Unsplash License",
+      "url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"
+    }
+  ]
+}
