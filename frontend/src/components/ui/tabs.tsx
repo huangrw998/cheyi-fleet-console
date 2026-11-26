@@ -24,13 +24,13 @@ export function Tabs({
             aria-selected={active}
             onClick={() => onChange(item.value)}
             className={cn(
-              'inline-flex h-10 shrink-0 items-center gap-1.5 rounded-lg px-3.5 text-xs font-medium leading-5 transition',
+              'inline-flex h-10 shrink-0 items-center gap-1.5 rounded-lg px-3.5 text-sm font-medium leading-5 transition',
               active ? 'bg-ink text-canvas' : 'text-muted hover:bg-card2 hover:text-ink',
             )}
           >
             {item.label}
             {typeof item.count === 'number' ? (
-              <span className={cn('font-mono text-[10px]', active ? 'text-canvas/70' : 'text-muted')}>{item.count}</span>
+              <span className={cn('font-mono text-[11px]', active ? 'text-canvas/70' : 'text-muted')}>{item.count}</span>
             ) : null}
           </button>
         )

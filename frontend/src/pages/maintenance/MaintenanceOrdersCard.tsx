@@ -30,12 +30,12 @@ export function MaintenanceOrdersCard({ orders, tab, onTab, onAdvance, advancing
           <tbody>
             {filtered.map((order) => (
               <tr key={order.id} className="transition hover:bg-card2/40">
-                <Td className="font-mono text-xs">{order.order_no}</Td>
-                <Td><Link to={`/vehicles/${order.vehicle_id}`} className="font-mono text-xs text-accent hover:underline">{order.vehicle?.plate_no ?? '-'}</Link><p className="mt-0.5 text-[10px] text-muted">{order.vehicle?.model?.brand} {order.vehicle?.model?.name}</p></Td>
-                <Td className="max-w-56 truncate text-xs">{order.description || order.type}</Td>
-                <Td className="text-xs text-muted">{order.vendor || '-'}</Td>
-                <Td className="font-mono text-xs text-muted">{formatDate(order.scheduled_at)}</Td>
-                <Td><Money cents={order.cost_cents} className="text-xs" /></Td>
+                <Td className="font-mono text-[13px]">{order.order_no}</Td>
+                <Td><Link to={`/vehicles/${order.vehicle_id}`} className="font-mono text-[13px] text-accent hover:underline">{order.vehicle?.plate_no ?? '-'}</Link><p className="mt-0.5 text-xs text-muted">{order.vehicle?.model?.brand} {order.vehicle?.model?.name}</p></Td>
+                <Td className="max-w-56 truncate text-[13px]">{order.description || order.type}</Td>
+                <Td className="text-[13px] text-muted">{order.vendor || '-'}</Td>
+                <Td className="font-mono text-[13px] text-muted">{formatDate(order.scheduled_at)}</Td>
+                <Td><Money cents={order.cost_cents} className="text-[13px]" /></Td>
                 <Td><StatusBadge status={order.status} /></Td>
                 <Td>{nextStatus[order.status] ? <Button size="sm" variant="soft" loading={advancing} onClick={() => onAdvance(order.id, nextStatus[order.status])}>{nextLabel[order.status]}</Button> : <Button size="sm" variant="secondary" disabled>{order.status === 'cancelled' ? '已取消' : '已完成'}</Button>}</Td>
               </tr>

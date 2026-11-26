@@ -17,11 +17,11 @@ export function PlansTab({ plans, onNew, onEdit }: { plans: PricingPlan[]; onNew
         <tbody>
           {plans.map((plan) => (
             <tr key={plan.id} className="transition hover:bg-card2/40">
-              <Td className="text-xs font-medium">{plan.name}</Td>
-              <Td className="text-xs text-muted">{plan.body_type}</Td>
-              <Td><Money cents={plan.monthly_rent_cents} className="text-xs" /></Td>
-              <Td><Money cents={plan.deposit_cents} className="text-xs" /></Td>
-              <Td className="font-mono text-xs">{plan.min_term_months} 个月</Td>
+              <Td className="text-[13px] font-medium">{plan.name}</Td>
+              <Td className="text-[13px] text-muted">{plan.body_type}</Td>
+              <Td><Money cents={plan.monthly_rent_cents} className="text-[13px]" /></Td>
+              <Td><Money cents={plan.deposit_cents} className="text-[13px]" /></Td>
+              <Td className="font-mono text-[13px]">{plan.min_term_months} 个月</Td>
               <Td><Badge tone={plan.status === 'active' ? 'success' : 'neutral'}>{plan.status === 'active' ? '启用' : '停用'}</Badge></Td>
               <Td><Button size="sm" variant="ghost" onClick={() => onEdit(plan)}>编辑</Button></Td>
             </tr>

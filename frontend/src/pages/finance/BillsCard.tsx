@@ -63,15 +63,15 @@ export function BillsCard({
             <tbody>
               {data.data.map((bill) => (
                 <tr key={bill.id} className="transition hover:bg-card2/40">
-                  <Td className="font-mono text-xs">{bill.bill_no}</Td>
+                  <Td className="font-mono text-[13px]">{bill.bill_no}</Td>
                   <Td>
                     <Link to={`/leases/${bill.lease_id}`} className="text-xs text-accent hover:underline">{bill.lease?.lease_no ?? `#${bill.lease_id}`}</Link>
-                    <p className="mt-0.5 text-[10px] text-muted">{bill.lease?.driver?.name ?? '-'}</p>
+                    <p className="mt-0.5 text-xs text-muted">{bill.lease?.driver?.name ?? '-'}</p>
                   </Td>
-                  <Td className="font-mono text-xs">{bill.lease?.vehicle?.plate_no ?? '-'}</Td>
-                  <Td className="text-xs">{billTypeLabel(bill.type)}</Td>
-                  <Td><Money cents={bill.amount_cents} className="text-xs" /></Td>
-                  <Td className="font-mono text-xs text-muted">{formatDate(bill.due_date)}</Td>
+                  <Td className="font-mono text-[13px]">{bill.lease?.vehicle?.plate_no ?? '-'}</Td>
+                  <Td className="text-[13px]">{billTypeLabel(bill.type)}</Td>
+                  <Td><Money cents={bill.amount_cents} className="text-[13px]" /></Td>
+                  <Td className="font-mono text-[13px] text-muted">{formatDate(bill.due_date)}</Td>
                   <Td><StatusBadge status={bill.status} /></Td>
                   <Td>
                     {bill.status === 'pending' || bill.status === 'overdue'

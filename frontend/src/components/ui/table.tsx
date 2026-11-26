@@ -8,14 +8,14 @@ import { Select } from './select'
 export function DataTable({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <div className={cn('w-full overflow-x-auto scrollbar-thin', className)}>
-      <table className="w-full min-w-[720px] border-collapse text-left text-[13px]">{children}</table>
+      <table className="w-full min-w-[720px] border-collapse text-left text-sm">{children}</table>
     </div>
   )
 }
 
 export function Th({ children, className }: { children?: ReactNode; className?: string }) {
   return (
-    <th className={cn('whitespace-nowrap border-b border-line bg-card2/50 px-4 py-2.5 text-[11px] font-medium uppercase tracking-wide text-muted', className)}>
+    <th className={cn('whitespace-nowrap border-b border-line bg-card2/50 px-4 py-2.5 text-xs font-medium uppercase tracking-wide text-muted', className)}>
       {children}
     </th>
   )

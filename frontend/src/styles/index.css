@@ -119,11 +119,11 @@
 
   *::-webkit-scrollbar-thumb {
     border-radius: 999px;
-    background: var(--border);
+    background: color-mix(in oklab, var(--info) 48%, transparent);
   }
 
   *::-webkit-scrollbar-thumb:hover {
-    background: var(--muted);
+    background: var(--info);
   }
 
   *::-webkit-scrollbar-button,
@@ -148,18 +148,18 @@
 
   html::-webkit-scrollbar-track,
   body::-webkit-scrollbar-track {
-    background: var(--scrollbar-track, var(--card2));
+    background: var(--scrollbar-track, color-mix(in oklab, var(--accent-soft) 72%, var(--card)));
   }
 
   html::-webkit-scrollbar-thumb,
   body::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb, var(--muted));
+    background: var(--scrollbar-thumb, var(--accent));
     border-radius: 999px;
   }
 
   html::-webkit-scrollbar-thumb:hover,
   body::-webkit-scrollbar-thumb:hover {
-    background: var(--ink);
+    background: var(--accent-hover);
   }
 
   body {
@@ -244,7 +244,11 @@
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
     border-radius: 999px;
-    background: var(--border);
+    background: color-mix(in oklab, var(--info) 45%, transparent);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: var(--info);
   }
 
   .no-scrollbar {

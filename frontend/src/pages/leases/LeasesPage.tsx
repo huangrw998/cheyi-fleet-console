@@ -82,13 +82,13 @@ export default function LeasesPage() {
                   const overdue = lease.status === 'active' && new Date(lease.end_date).getTime() < Date.now()
                   return (
                     <tr key={lease.id} className="transition hover:bg-card2/40">
-                      <Td><Link to={`/leases/${lease.id}`} className="group block"><span className="block font-mono text-xs text-ink group-hover:text-accent">{lease.lease_no}</span><span className="mt-0.5 block text-[10px] text-muted">{lease.driver?.name ?? '-'} · {lease.driver?.phone ?? ''}</span></Link></Td>
-                      <Td><span className="block font-mono text-xs text-ink">{lease.vehicle?.plate_no ?? '-'}</span><span className="mt-0.5 block text-[10px] text-muted">{lease.vehicle?.model?.brand} {lease.vehicle?.model?.name}</span></Td>
-                      <Td className="text-xs text-muted">{lease.store?.name ?? '-'}</Td>
-                      <Td className="font-mono text-xs text-muted">{formatDate(lease.start_date)}<br />{formatDate(lease.end_date)}</Td>
-                      <Td><Money cents={lease.monthly_rent_cents} className="text-xs" /></Td>
+                      <Td><Link to={`/leases/${lease.id}`} className="group block"><span className="block font-mono text-[13px] text-ink group-hover:text-accent">{lease.lease_no}</span><span className="mt-0.5 block text-xs text-muted">{lease.driver?.name ?? '-'} · {lease.driver?.phone ?? ''}</span></Link></Td>
+                      <Td><span className="block font-mono text-[13px] text-ink">{lease.vehicle?.plate_no ?? '-'}</span><span className="mt-0.5 block text-xs text-muted">{lease.vehicle?.model?.brand} {lease.vehicle?.model?.name}</span></Td>
+                      <Td className="text-[13px] text-muted">{lease.store?.name ?? '-'}</Td>
+                      <Td className="font-mono text-[13px] text-muted">{formatDate(lease.start_date)}<br />{formatDate(lease.end_date)}</Td>
+                      <Td><Money cents={lease.monthly_rent_cents} className="text-[13px]" /></Td>
                       <Td><StatusBadge status={overdue ? 'overdue' : lease.status} /></Td>
-                      <Td><Link to={`/leases/${lease.id}`} className="inline-flex items-center gap-1 text-xs text-accent hover:underline">详情 <ArrowRight size={12} /></Link></Td>
+                      <Td><Link to={`/leases/${lease.id}`} className="inline-flex items-center gap-1 text-[13px] text-accent hover:underline">详情 <ArrowRight size={12} /></Link></Td>
                     </tr>
                   )
                 })}

@@ -81,12 +81,12 @@ export default function ReportsPage() {
             <tbody>
               {data.store_ranking.map((store, index) => (
                 <tr key={store.id} className="transition hover:bg-card2/40">
-                  <Td><span className="font-mono text-xs text-muted">{String(index + 1).padStart(2, '0')}</span></Td>
-                  <Td><p className="text-xs font-medium text-ink">{store.name}</p><p className="mt-0.5 text-[10px] text-muted">{store.district}</p></Td>
-                  <Td className="font-mono text-xs">{store.vehicles}</Td>
-                  <Td className="font-mono text-xs">{store.active}</Td>
-                  <Td><div className="flex items-center gap-2"><div className="h-1.5 w-20 overflow-hidden rounded-full bg-card2"><div className="h-full rounded-full bg-accent" style={{ width: `${Math.min(100, store.utilization)}%` }} /></div><span className="font-mono text-[11px] text-ink">{formatPercent(store.utilization)}</span></div></Td>
-                  <Td><span className="font-mono text-xs text-ink">{formatMoney(store.revenue_cents, true)}</span></Td>
+                  <Td><span className="font-mono text-[13px] text-muted">{String(index + 1).padStart(2, '0')}</span></Td>
+                  <Td><p className="text-[13px] font-medium text-ink">{store.name}</p><p className="mt-0.5 text-xs text-muted">{store.district}</p></Td>
+                  <Td className="font-mono text-[13px]">{store.vehicles}</Td>
+                  <Td className="font-mono text-[13px]">{store.active}</Td>
+                  <Td><div className="flex items-center gap-2"><div className="h-1.5 w-20 overflow-hidden rounded-full bg-card2"><div className="h-full rounded-full bg-accent" style={{ width: `${Math.min(100, store.utilization)}%` }} /></div><span className="font-mono text-xs text-ink">{formatPercent(store.utilization)}</span></div></Td>
+                  <Td><span className="font-mono text-[13px] text-ink">{formatMoney(store.revenue_cents, true)}</span></Td>
                   <Td><Badge tone={store.utilization > 80 ? 'success' : store.utilization > 55 ? 'info' : 'warning'}>{store.utilization > 80 ? '高负荷' : store.utilization > 55 ? '正常' : '待提升'}</Badge></Td>
                 </tr>
               ))}

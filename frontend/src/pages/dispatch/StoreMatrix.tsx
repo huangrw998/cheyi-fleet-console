@@ -11,13 +11,13 @@ export function StoreMatrix({ matrix }: { matrix: { store: Store; row: Record<st
         <tbody>
           {matrix.map(({ store, row }) => (
             <tr key={store.id} className="transition hover:bg-card2/40">
-              <Td><p className="text-xs font-medium text-ink">{store.name}</p><p className="mt-0.5 text-[10px] text-muted">{store.district}</p></Td>
+              <Td><p className="text-[13px] font-medium text-ink">{store.name}</p><p className="mt-0.5 text-xs text-muted">{store.district}</p></Td>
               {dispatchStatusColumns.map((column) => (
                 <Td key={column.key} className="text-center">
                   <span className={`inline-flex min-w-7 justify-center rounded-md px-1.5 py-0.5 font-mono text-xs ${row[column.key] ? (column.key === 'available' ? 'bg-success-soft text-success' : column.key === 'rented' ? 'bg-info-soft text-info' : 'bg-card2 text-muted') : 'text-muted/40'}`}>{row[column.key] ?? 0}</span>
                 </Td>
               ))}
-              <Td className="text-center font-mono text-xs text-muted">{store.capacity}</Td>
+              <Td className="text-center font-mono text-[13px] text-muted">{store.capacity}</Td>
             </tr>
           ))}
         </tbody>

@@ -17,10 +17,10 @@ export function DriverLeasesCard({ leases }: { leases: Lease[] }) {
         <tbody>
           {leases.map((lease) => (
             <tr key={lease.id} className="transition hover:bg-card2/40">
-              <Td><Link to={`/leases/${lease.id}`} className="font-mono text-xs text-accent hover:underline">{lease.lease_no}</Link></Td>
-              <Td className="font-mono text-xs">{lease.vehicle?.plate_no ?? '-'}</Td>
-              <Td className="font-mono text-xs text-muted">{formatDate(lease.start_date)} - {formatDate(lease.end_date)}</Td>
-              <Td><Money cents={lease.monthly_rent_cents} className="text-xs" /></Td>
+              <Td><Link to={`/leases/${lease.id}`} className="font-mono text-[13px] text-accent hover:underline">{lease.lease_no}</Link></Td>
+              <Td className="font-mono text-[13px]">{lease.vehicle?.plate_no ?? '-'}</Td>
+              <Td className="font-mono text-[13px] text-muted">{formatDate(lease.start_date)} - {formatDate(lease.end_date)}</Td>
+              <Td><Money cents={lease.monthly_rent_cents} className="text-[13px]" /></Td>
               <Td><StatusBadge status={lease.status} /></Td>
             </tr>
           ))}

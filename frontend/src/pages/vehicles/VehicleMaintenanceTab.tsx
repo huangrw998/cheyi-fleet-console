@@ -16,11 +16,11 @@ export function VehicleMaintenanceTab({ orders }: { orders: MaintenanceOrder[] }
         <tbody>
           {orders.map((order) => (
             <tr key={order.id} className="transition hover:bg-card2/40">
-              <Td className="font-mono text-xs">{order.order_no}</Td>
-              <Td className="text-xs">{order.description}</Td>
-              <Td className="text-xs text-muted">{order.vendor}</Td>
-              <Td><Money cents={order.cost_cents} className="text-xs" /></Td>
-              <Td className="font-mono text-xs text-muted">{formatDate(order.scheduled_at)}</Td>
+              <Td className="font-mono text-[13px]">{order.order_no}</Td>
+              <Td className="text-[13px]">{order.description}</Td>
+              <Td className="text-[13px] text-muted">{order.vendor}</Td>
+              <Td><Money cents={order.cost_cents} className="text-[13px]" /></Td>
+              <Td className="font-mono text-[13px] text-muted">{formatDate(order.scheduled_at)}</Td>
               <Td><StatusBadge status={order.status} /></Td>
             </tr>
           ))}

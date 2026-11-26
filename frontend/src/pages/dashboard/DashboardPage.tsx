@@ -37,13 +37,13 @@ export default function DashboardPage() {
         actions={<><Button variant="secondary" onClick={() => navigate('/models')}><Images size={16} /> 车型展厅</Button><Button variant="primary" onClick={() => navigate('/leases/new')}><Plus size={16} /> 新建租约</Button></>}
       />
 
-      <div className="info-tile-compact flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] text-muted">
+      <div className="info-tile-compact flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted">
         <span className="inline-flex items-center gap-1.5"><span className={online ? 'h-1.5 w-1.5 rounded-full bg-success' : 'h-1.5 w-1.5 rounded-full bg-danger'} />{online ? '服务在线' : '服务异常'}</span>
         <span>{dashboard.month_label}</span>
         <span>车队规模 <span className="font-mono text-ink">{dashboard.kpis.total_vehicles}</span> 台</span>
         <span>运营门店 <span className="font-mono text-ink">{dashboard.stores.length}</span> 个</span>
         <span>本月到期未收 <span className="font-mono text-ink">{formatMoney(dashboard.kpis.monthly_receivable_cents, true)}</span></span>
-        <span className="ml-auto font-mono text-[10px] text-muted/80">数据更新 {new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</span>
+        <span className="ml-auto font-mono text-[11px] text-muted/80">数据更新 {new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}</span>
       </div>
 
       <DashboardHero hero={state.hero} activeLeases={dashboard.kpis.active_leases} utilization={dashboard.kpis.utilization} />

@@ -11,10 +11,10 @@ export function DriverBillsCard({ bills }: { bills: Bill[] }) {
         <tbody>
           {bills.map((bill) => (
             <tr key={bill.id} className="transition hover:bg-card2/40">
-              <Td className="font-mono text-xs">{bill.bill_no}</Td>
-              <Td className="text-xs">{billTypeLabel(bill.type)}</Td>
-              <Td><Money cents={bill.amount_cents} className="text-xs" /></Td>
-              <Td className="font-mono text-xs text-muted">{formatDate(bill.due_date)}</Td>
+              <Td className="font-mono text-[13px]">{bill.bill_no}</Td>
+              <Td className="text-[13px]">{billTypeLabel(bill.type)}</Td>
+              <Td><Money cents={bill.amount_cents} className="text-[13px]" /></Td>
+              <Td className="font-mono text-[13px] text-muted">{formatDate(bill.due_date)}</Td>
               <Td><StatusBadge status={bill.status} /></Td>
             </tr>
           ))}

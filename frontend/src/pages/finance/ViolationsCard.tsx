@@ -20,11 +20,11 @@ export function ViolationsCard({ violations, onHandle, handling }: { violations:
           <tbody>
             {violations.map((violation) => (
               <tr key={violation.id} className="transition hover:bg-card2/40">
-                <Td><Link to={`/vehicles/${violation.vehicle_id}`} className="font-mono text-xs text-accent hover:underline">{violation.vehicle?.plate_no ?? '-'}</Link></Td>
-                <Td className="text-xs">{violation.driver?.name ?? '-'}</Td>
-                <Td className="text-xs">{violation.reason}</Td>
-                <Td className="font-mono text-xs text-muted">{formatDate(violation.occurred_at)}</Td>
-                <Td className="font-mono text-xs">{formatMoney(violation.fine_cents)} · {violation.points} 分</Td>
+                <Td><Link to={`/vehicles/${violation.vehicle_id}`} className="font-mono text-[13px] text-accent hover:underline">{violation.vehicle?.plate_no ?? '-'}</Link></Td>
+                <Td className="text-[13px]">{violation.driver?.name ?? '-'}</Td>
+                <Td className="text-[13px]">{violation.reason}</Td>
+                <Td className="font-mono text-[13px] text-muted">{formatDate(violation.occurred_at)}</Td>
+                <Td className="font-mono text-[13px]">{formatMoney(violation.fine_cents)} · {violation.points} 分</Td>
                 <Td><StatusBadge status={violation.status} /></Td>
                 <Td>
                   {violation.status === 'pending'

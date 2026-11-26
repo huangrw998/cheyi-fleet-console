@@ -15,12 +15,12 @@ export function VehicleLeasesTab({ leases }: { leases: Lease[] }) {
         <tbody>
           {leases.map((lease) => (
             <tr key={lease.id} className="transition hover:bg-card2/40">
-              <Td className="font-mono text-xs">{lease.lease_no}</Td>
-              <Td className="text-xs">{lease.driver?.name ?? '-'}</Td>
-              <Td className="font-mono text-xs text-muted">{formatDate(lease.start_date)} - {formatDate(lease.end_date)}</Td>
-              <Td><Money cents={lease.monthly_rent_cents} className="text-xs" /></Td>
+              <Td className="font-mono text-[13px]">{lease.lease_no}</Td>
+              <Td className="text-[13px]">{lease.driver?.name ?? '-'}</Td>
+              <Td className="font-mono text-[13px] text-muted">{formatDate(lease.start_date)} - {formatDate(lease.end_date)}</Td>
+              <Td><Money cents={lease.monthly_rent_cents} className="text-[13px]" /></Td>
               <Td><StatusBadge status={lease.status} /></Td>
-              <Td className="text-right"><Link to={`/leases/${lease.id}`} className="text-xs text-accent hover:underline">详情</Link></Td>
+              <Td className="text-right"><Link to={`/leases/${lease.id}`} className="text-[13px] text-accent hover:underline">详情</Link></Td>
             </tr>
           ))}
         </tbody>

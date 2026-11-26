@@ -35,7 +35,7 @@ export function RevenueTrendCard({
         className="mt-4"
         data={trend.map((item) => ({ label: item.date.slice(5), value: item.revenue_cents, secondary: item.utilization }))}
         format={(value) => formatMoney(value)}
-        height={220}
+        height={280}
       />
     </Card>
   )

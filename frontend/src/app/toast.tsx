@@ -29,17 +29,17 @@ const toneStyles: Record<ToastTone, string> = {
 }
 
 const toneSurface: Record<ToastTone, CSSProperties> = {
-  success: { backgroundImage: 'linear-gradient(135deg, var(--success-soft) 0%, var(--card) 58%)' },
-  error: { backgroundImage: 'linear-gradient(135deg, var(--danger-soft) 0%, var(--card) 58%)' },
-  warning: { backgroundImage: 'linear-gradient(135deg, var(--warning-soft) 0%, var(--card) 58%)' },
-  info: { backgroundImage: 'linear-gradient(135deg, var(--info-soft) 0%, var(--card) 58%)' },
+  success: { backgroundColor: 'color-mix(in oklab, var(--success-soft) 58%, var(--card))' },
+  error: { backgroundColor: 'color-mix(in oklab, var(--danger-soft) 58%, var(--card))' },
+  warning: { backgroundColor: 'color-mix(in oklab, var(--warning-soft) 58%, var(--card))' },
+  info: { backgroundColor: 'color-mix(in oklab, var(--info-soft) 58%, var(--card))' },
 }
 
 const toneSoft: Record<ToastTone, string> = {
-  success: 'bg-success-soft text-success',
-  error: 'bg-danger-soft text-danger',
-  warning: 'bg-warning-soft text-warning',
-  info: 'bg-info-soft text-info',
+  success: 'bg-card/75 text-success ring-success/20',
+  error: 'bg-card/75 text-danger ring-danger/20',
+  warning: 'bg-card/75 text-warning ring-warning/20',
+  info: 'bg-card/75 text-info ring-info/20',
 }
 
 const toneBar: Record<ToastTone, string> = {
@@ -107,8 +107,8 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               {toneIcon[item.tone]}
             </span>
             <div className="min-w-0 flex-1">
-              <p className="text-[13px] font-semibold leading-5 tracking-tight text-ink">{item.title}</p>
-              {item.description ? <p className="mt-0.5 text-xs leading-5 text-muted">{item.description}</p> : null}
+              <p className="text-sm font-semibold leading-5 tracking-tight text-ink">{item.title}</p>
+              {item.description ? <p className="mt-0.5 text-[13px] leading-5 text-muted">{item.description}</p> : null}
             </div>
             <span className="absolute inset-x-0 bottom-0 h-[3px] bg-line/40">
               <span className={cn('block h-full origin-left animate-toast-progress', toneBar[item.tone])} />

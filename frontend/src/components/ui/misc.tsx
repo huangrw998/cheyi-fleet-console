@@ -11,10 +11,10 @@ const avatarTones = [
 ]
 
 export function Avatar({ name, className }: { name?: string; className?: string }) {
-  const text = (name ?? '?').replace(/\s/g, '').slice(-2)
+  const text = Array.from((name ?? '?').trim())[0] ?? '?'
   const tone = avatarTones[Array.from(name ?? '').reduce((sum, char) => sum + char.charCodeAt(0), 0) % avatarTones.length]
   return (
-    <span className={cn('inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border font-mono text-[10px] font-medium', tone, className)}>
+    <span className={cn('inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold shadow-soft', tone, className)}>
       {text}
     </span>
   )

@@ -52,8 +52,8 @@ export default function CreditsPage() {
                     <span className="text-xs font-medium text-ink">{model.name}</span>
                   </div>
                 </Td>
-                <Td className="max-w-64 truncate text-[11px] text-muted">{model.file}</Td>
-                <Td className="text-xs text-muted">{model.author}</Td>
+                <Td className="max-w-64 truncate text-xs text-muted">{model.file}</Td>
+                <Td className="text-[13px] text-muted">{model.author}</Td>
                 <Td><Badge tone={model.license === 'CC0' ? 'success' : 'info'}>{model.license}</Badge></Td>
                 <Td>
                   <a href={model.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-xs text-accent hover:underline">
@@ -80,7 +80,7 @@ export default function CreditsPage() {
               <div key={model.key} className="flex items-center justify-between gap-3 px-5 py-3">
                 <div>
                   <p className="text-xs font-medium text-ink">{model.name}</p>
-                  <p className="mt-0.5 text-[10px] text-muted">{model.source} · {model.key}.glb</p>
+                  <p className="mt-0.5 text-xs text-muted">{model.source} · {model.key}.glb</p>
                 </div>
                 <div className="flex items-center gap-3">
                   <Badge tone="success">{model.license}</Badge>
@@ -105,7 +105,7 @@ export default function CreditsPage() {
                 <img src={scene.file} alt="" className="h-12 w-16 rounded-lg object-cover" loading="lazy" decoding="async" />
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-medium text-ink">{scene.name}</p>
-                  <p className="mt-0.5 text-[10px] text-muted">{scene.source} · {scene.license}</p>
+                  <p className="mt-0.5 text-xs text-muted">{scene.source} · {scene.license}</p>
                 </div>
                 <a href={scene.url} target="_blank" rel="noreferrer" className="text-accent hover:underline" aria-label={`查看 ${scene.name} 来源`}><ArrowSquareOut size={14} /></a>
               </div>

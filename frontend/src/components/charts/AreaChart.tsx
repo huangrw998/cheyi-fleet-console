@@ -116,13 +116,13 @@ export function AreaChart({
           </div>
         ) : null}
       </div>
-      <div className="mt-1 flex flex-wrap items-center gap-4 text-[11px] text-muted">
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-6 text-sm text-muted">
         <span className="inline-flex items-center gap-1.5">
-          <span className="h-1.5 w-4 rounded-full bg-chart-1" /> {format(values[values.length - 1] ?? 0)}
+          <span className="h-2 w-5 rounded-full bg-chart-1" /> {format(values[values.length - 1] ?? 0)}
         </span>
         {showSecondary ? (
           <span className="inline-flex items-center gap-1.5">
-            <span className="h-1.5 w-4 rounded-full bg-chart-3 opacity-80" /> 出租率
+            <span className="h-2 w-5 rounded-full bg-chart-3 opacity-80" /> 出租率
           </span>
         ) : null}
       </div>

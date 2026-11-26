@@ -13,10 +13,10 @@ export function DispatchTasksTable({ tasks, onComplete, completing }: { tasks: D
           <tbody>
             {tasks.map((task) => (
               <tr key={task.id} className="transition hover:bg-card2/40">
-                <Td className="font-mono text-xs">{task.task_no}</Td>
-                <Td><p className="font-mono text-xs text-ink">{task.vehicle?.plate_no ?? '-'}</p><p className="mt-0.5 text-[10px] text-muted">{task.vehicle?.model?.brand} {task.vehicle?.model?.name}</p></Td>
-                <Td><div className="flex items-center gap-1.5 text-[11px] text-muted"><span>{task.from_store?.name ?? '-'}</span><ArrowRight size={12} className="text-accent" /><span className="text-ink">{task.to_store?.name ?? '-'}</span></div></Td>
-                <Td className="font-mono text-xs text-muted">{formatDate(task.scheduled_at)}</Td>
+                <Td className="font-mono text-[13px]">{task.task_no}</Td>
+                <Td><p className="font-mono text-[13px] text-ink">{task.vehicle?.plate_no ?? '-'}</p><p className="mt-0.5 text-xs text-muted">{task.vehicle?.model?.brand} {task.vehicle?.model?.name}</p></Td>
+                <Td><div className="flex items-center gap-1.5 text-xs text-muted"><span>{task.from_store?.name ?? '-'}</span><ArrowRight size={12} className="text-accent" /><span className="text-ink">{task.to_store?.name ?? '-'}</span></div></Td>
+                <Td className="font-mono text-[13px] text-muted">{formatDate(task.scheduled_at)}</Td>
                 <Td><StatusBadge status={task.status} /></Td>
                 <Td>{task.status === 'completed' || task.status === 'cancelled' ? <Button size="sm" variant="secondary" disabled>{task.status === 'cancelled' ? '已取消' : '已完成'}</Button> : <Button size="sm" variant="soft" loading={completing} onClick={() => onComplete(task.id)}>完成调拨</Button>}</Td>
               </tr>

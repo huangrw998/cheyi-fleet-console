@@ -41,19 +41,19 @@ export function DriversTable({
                     <Avatar name={driver.name} />
                     <span>
                       <span className="block text-xs font-medium text-ink group-hover:text-accent">{driver.name}</span>
-                      <span className="mt-0.5 block font-mono text-[10px] text-muted">{driver.phone}</span>
+                      <span className="mt-0.5 block font-mono text-xs text-muted">{driver.phone}</span>
                     </span>
                   </Link>
                 </Td>
                 <Td><StatusBadge status={driver.status} /></Td>
-                <Td className="font-mono text-xs">{driver.current_vehicle?.plate_no ?? '-'}</Td>
-                <Td className="text-xs text-muted">{driver.current_lease ? `${formatDate(driver.current_lease.start_date)} 起` : '-'}</Td>
-                <Td className="font-mono text-xs">{driver.rating.toFixed(1)}</Td>
+                <Td className="font-mono text-[13px]">{driver.current_vehicle?.plate_no ?? '-'}</Td>
+                <Td className="text-[13px] text-muted">{driver.current_lease ? `${formatDate(driver.current_lease.start_date)} 起` : '-'}</Td>
+                <Td className="font-mono text-[13px]">{driver.rating.toFixed(1)}</Td>
                 <Td>
                   <span className={`font-mono text-xs ${days !== null && days <= 30 ? 'text-warning' : 'text-muted'}`}>{formatDate(driver.license_expiry)}</span>
-                  <span className="ml-1 text-[10px] text-muted">{days !== null ? daysText(days) : ''}</span>
+                  <span className="ml-1 text-xs text-muted">{days !== null ? daysText(days) : ''}</span>
                 </Td>
-                <Td><Link to={`/drivers/${driver.id}`} className="text-xs text-accent hover:underline">详情</Link></Td>
+                <Td><Link to={`/drivers/${driver.id}`} className="text-[13px] text-accent hover:underline">详情</Link></Td>
               </tr>
             )
           })}

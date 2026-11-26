@@ -20,12 +20,12 @@ export function InsuranceCard({ insurance }: { insurance: InsurancePolicy[] }) {
               const days = daysUntil(policy.end_date)
               return (
                 <tr key={policy.id} className="transition hover:bg-card2/40">
-                  <Td><Link to={`/vehicles/${policy.vehicle_id}`} className="font-mono text-xs text-accent hover:underline">{policy.vehicle?.plate_no ?? '-'}</Link></Td>
-                  <Td className="text-xs">{policy.provider}</Td>
-                  <Td className="font-mono text-[10px] text-muted">{policy.policy_no}</Td>
-                  <Td className="text-xs text-muted">{policy.type}</Td>
-                  <Td><Money cents={policy.premium_cents} className="text-xs" /></Td>
-                  <Td><span className={`font-mono text-xs ${days !== null && days <= 30 ? 'text-warning' : 'text-muted'}`}>{formatDate(policy.end_date)}</span><span className="ml-1 text-[10px] text-muted">{days !== null ? daysText(days) : ''}</span></Td>
+                  <Td><Link to={`/vehicles/${policy.vehicle_id}`} className="font-mono text-[13px] text-accent hover:underline">{policy.vehicle?.plate_no ?? '-'}</Link></Td>
+                  <Td className="text-[13px]">{policy.provider}</Td>
+                  <Td className="font-mono text-xs text-muted">{policy.policy_no}</Td>
+                  <Td className="text-[13px] text-muted">{policy.type}</Td>
+                  <Td><Money cents={policy.premium_cents} className="text-[13px]" /></Td>
+                  <Td><span className={`font-mono text-[13px] ${days !== null && days <= 30 ? 'text-warning' : 'text-muted'}`}>{formatDate(policy.end_date)}</span><span className="ml-1 text-xs text-muted">{days !== null ? daysText(days) : ''}</span></Td>
                   <Td><Badge tone={days !== null && days <= 30 ? 'warning' : 'success'}>{days !== null && days <= 30 ? '即将到期' : '有效'}</Badge></Td>
                 </tr>
               )

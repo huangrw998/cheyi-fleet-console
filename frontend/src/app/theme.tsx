@@ -61,14 +61,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     const root = document.documentElement
     const computed = getComputedStyle(root)
     // 冻结主滚动条颜色，扩散动画结束后再切换。
-    root.style.setProperty('--scrollbar-track', computed.getPropertyValue('--card2').trim())
-    root.style.setProperty('--scrollbar-thumb', computed.getPropertyValue('--muted').trim())
+    root.style.setProperty('--scrollbar-track', computed.getPropertyValue('--accent-soft').trim())
+    root.style.setProperty('--scrollbar-thumb', computed.getPropertyValue('--accent').trim())
     root.classList.add('theme-switching')
 
     const release = () => {
       const next = getComputedStyle(root)
-      root.style.setProperty('--scrollbar-track', next.getPropertyValue('--card2').trim())
-      root.style.setProperty('--scrollbar-thumb', next.getPropertyValue('--muted').trim())
+      root.style.setProperty('--scrollbar-track', next.getPropertyValue('--accent-soft').trim())
+      root.style.setProperty('--scrollbar-thumb', next.getPropertyValue('--accent').trim())
       root.classList.remove('theme-switching')
     }
 

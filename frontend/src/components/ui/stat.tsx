@@ -20,19 +20,19 @@ export function Stat({
   return (
     <div className={cn('min-w-0', className)}>
       <div className="flex items-center justify-between gap-2">
-        <span className="text-[11px] font-medium uppercase tracking-wide text-muted">{label}</span>
+        <span className="text-xs font-medium uppercase tracking-wide text-muted">{label}</span>
         {icon ? <span className="text-muted transition-colors duration-200 group-hover:text-accent">{icon}</span> : null}
       </div>
       <div className="mt-2 flex flex-wrap items-baseline gap-2">
         <span className="font-mono text-xl font-semibold tracking-tight text-ink sm:text-2xl">{value}</span>
         {typeof delta === 'number' ? (
-          <span className={cn('text-[11px] font-medium', delta >= 0 ? 'text-success' : 'text-danger')}>
+          <span className={cn('text-xs font-medium', delta >= 0 ? 'text-success' : 'text-danger')}>
             {delta >= 0 ? '+' : ''}
             {delta.toFixed(1)}%
           </span>
         ) : null}
       </div>
-      {hint ? <p className="mt-1 text-[11px] leading-5 text-muted">{hint}</p> : null}
+      {hint ? <p className="mt-1 text-xs leading-5 text-muted">{hint}</p> : null}
     </div>
   )
 }

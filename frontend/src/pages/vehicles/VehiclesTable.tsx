@@ -43,19 +43,19 @@ export function VehiclesTable({
                     <span className="flex h-9 w-12 shrink-0 items-center justify-center rounded-lg border border-line bg-card2 font-mono text-[9px] text-muted">{vehicle.plate_no.slice(-4)}</span>
                     <span className="min-w-0">
                       <span className="block font-mono text-xs text-ink group-hover:text-accent">{vehicle.plate_no}</span>
-                      <span className="mt-0.5 block truncate text-[10px] text-muted">{vehicle.model?.brand} {vehicle.model?.name}</span>
+                      <span className="mt-0.5 block truncate text-xs text-muted">{vehicle.model?.brand} {vehicle.model?.name}</span>
                     </span>
                   </Link>
                 </Td>
-                <Td className="text-xs text-muted">{vehicle.store?.name ?? '-'}</Td>
+                <Td className="text-[13px] text-muted">{vehicle.store?.name ?? '-'}</Td>
                 <Td><StatusBadge status={vehicle.status} /></Td>
-                <Td><Money cents={vehicle.model?.monthly_rent_cents ?? 0} className="text-xs" /></Td>
-                <Td className="font-mono text-xs">{vehicle.mileage_km.toLocaleString('zh-CN')} km</Td>
+                <Td><Money cents={vehicle.model?.monthly_rent_cents ?? 0} className="text-[13px]" /></Td>
+                <Td className="font-mono text-[13px]">{vehicle.mileage_km.toLocaleString('zh-CN')} km</Td>
                 <Td>
                   <span className={`font-mono text-xs ${days !== null && days <= 30 ? 'text-warning' : 'text-muted'}`}>{formatDate(vehicle.insurance_expiry)}</span>
-                  <span className="ml-1 text-[10px] text-muted">{days !== null ? daysText(days) : ''}</span>
+                  <span className="ml-1 text-xs text-muted">{days !== null ? daysText(days) : ''}</span>
                 </Td>
-                <Td><Link to={`/vehicles/${vehicle.id}`} className="text-xs text-accent hover:underline">详情</Link></Td>
+                <Td><Link to={`/vehicles/${vehicle.id}`} className="text-[13px] text-accent hover:underline">详情</Link></Td>
               </tr>
             )
           })}

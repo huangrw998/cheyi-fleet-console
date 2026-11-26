@@ -16,12 +16,12 @@ export function ModelFleetTable({ vehicles, availableCount, slug }: { vehicles: 
         <tbody>
           {vehicles.slice(0, 10).map((vehicle) => (
             <tr key={vehicle.id} className="transition hover:bg-card2/40">
-              <Td className="font-mono text-xs">{vehicle.plate_no}</Td>
-              <Td className="text-xs text-muted">{vehicle.store?.name ?? '-'}</Td>
+              <Td className="font-mono text-[13px]">{vehicle.plate_no}</Td>
+              <Td className="text-[13px] text-muted">{vehicle.store?.name ?? '-'}</Td>
               <Td><StatusBadge status={vehicle.status} /></Td>
-              <Td className="font-mono text-xs">{vehicle.mileage_km.toLocaleString('zh-CN')} km</Td>
-              <Td className="font-mono text-xs text-muted">{formatDate(vehicle.insurance_expiry)}</Td>
-              <Td className="text-right"><Link to={`/vehicles/${vehicle.id}`} className="text-xs text-accent hover:underline">详情</Link></Td>
+              <Td className="font-mono text-[13px]">{vehicle.mileage_km.toLocaleString('zh-CN')} km</Td>
+              <Td className="font-mono text-[13px] text-muted">{formatDate(vehicle.insurance_expiry)}</Td>
+              <Td className="text-right"><Link to={`/vehicles/${vehicle.id}`} className="text-[13px] text-accent hover:underline">详情</Link></Td>
             </tr>
           ))}
         </tbody>
