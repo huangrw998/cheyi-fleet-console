@@ -106,6 +106,7 @@ lib/api.ts（通用 fetch / ApiError / query string）
 | `Button` / `ButtonLink` / `CopyButton` | 按钮、链接按钮、圆形复制按钮 |
 | `Modal` / `ConfirmDialog` / `Drawer` | 所有弹层 |
 | `OverlayHeader` / `PasswordToggle` | 弹层头、密码显示切换 |
+| `InlineError` / `BackLink` / `StatCell` | 错误提示、返回链接、统计单元格复用 |
 | `DataTable` / `Pagination` | 表格与分页 |
 
 没有页面新增一次性颜色、阴影或圆角。
