@@ -22,7 +22,7 @@ build:
 	rm -rf backend/internal/web/dist
 	mkdir -p backend/internal/web/dist
 	cp -r frontend/dist/. backend/internal/web/dist/
-	cd backend && go build -o cheyi-server ./cmd/server
+	cd backend && go build -tags prod -o cheyi-server ./cmd/server
 
 test:
 	cd backend && go test ./...

@@ -853,7 +853,7 @@ make build
 
 1. `frontend npm run build`
 2. 复制 `frontend/dist` 到 `backend/internal/web/dist`
-3. `go build -o cheyi-server ./cmd/server`
+3. `go build -tags prod -o cheyi-server ./cmd/server`
 
 启动：
 
@@ -863,7 +863,7 @@ APP_ENV=production PORT=8090 DB_PATH=backend/data/cheyi.db ./backend/cheyi-serve
 
 静态托管：
 
-- `//go:embed all:dist`
+- `//go:embed all:dist`（仅 `prod` 构建标签生效，开发构建使用空 FS）
 - 非 API 路由回退 `index.html`
 - API 404 返回 JSON
 
