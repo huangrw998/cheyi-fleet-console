@@ -21,9 +21,9 @@
 
 | 指标 | 优化前 | 优化后 |
 |---|---|---|
-| 主入口 JS | 973.37 kB / 265.62 kB gzip | 477.98 kB / 143.06 kB gzip |
+| 主入口 JS | 973.37 kB / 265.62 kB gzip | 477.82 kB / 142.92 kB gzip |
 | 页面 chunk | 全部在主入口 | 5.6–26.8 kB 按需加载 |
-| UI 共享 chunk | 混在主入口 | 266.83 kB / 78.53 kB gzip |
+| UI 共享 chunk | 混在主入口 | 268.75 kB / 78.81 kB gzip |
 | Three.js chunk | 690 kB / 174 kB gzip | 690.16 kB / 174.01 kB gzip，仍按 3D Tab 懒加载 |
 
 首屏入口 gzip 体积下降约 46%。业务页面在首次访问时加载对应 chunk，之后由浏览器缓存。
@@ -67,7 +67,7 @@
 
 - 固定在顶部居中，最大宽度 420px
 - 12px 圆角、1px 语义边框、`shadow-card`
-- 语义渐变表面：success / error / warning / info
+- 语义纯色柔和表面：success / error / warning / info，使用 `color-mix` 与 card 融合
 - 36px 圆角方形图标，与文字整体垂直居中
 - 不使用状态标签
 - 不使用关闭按钮，避免视觉噪音，4.2s 后自动消失
