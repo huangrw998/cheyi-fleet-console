@@ -13,7 +13,7 @@ export function AuthLayout({
   label,
 }: {
   children: ReactNode
-  stats?: { vehicles: number; drivers: number; active_leases: number }
+  stats?: { vehicles: number; drivers: number; active_leases: number; stores: number }
   online?: boolean
   label: string
 }) {

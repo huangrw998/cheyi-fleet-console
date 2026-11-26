@@ -71,7 +71,7 @@ export function VehicleCreateModal({
       footer={<><Button variant="secondary" onClick={onClose}>取消</Button><Button variant="primary" loading={creating} onClick={() => void submit()}>创建车辆</Button></>}
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="车牌号" required><Input value={form.plate_no} onChange={(e) => setForm({ ...form, plate_no: e.target.value })} placeholder="沪A D8888" /></Field>
+        <Field label="车牌号" required><Input value={form.plate_no} onChange={(e) => setForm({ ...form, plate_no: e.target.value })} placeholder="输入车牌号" /></Field>
         <Field label="车型" required>
           <Select value={form.model_id} onChange={(value) => setForm({ ...form, model_id: value })}>
             <option value="">选择车型</option>

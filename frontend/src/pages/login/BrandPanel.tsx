@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export function BrandPanel({ stats, online = true }: { stats?: { vehicles: number; drivers: number; active_leases: number }; online?: boolean }) {
+export function BrandPanel({ stats, online = true }: { stats?: { vehicles: number; drivers: number; active_leases: number; stores: number }; online?: boolean }) {
   return (
     <section className="relative hidden overflow-hidden bg-deep lg:block">
       <img src="/media/models/byd-qin-plus-ev/wide.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-75" loading="eager" decoding="async" fetchPriority="high" />
@@ -16,16 +16,16 @@ export function BrandPanel({ stats, online = true }: { stats?: { vehicles: numbe
           <p className="mt-5 max-w-md text-sm leading-7 text-white/65">从车型展厅到租约交付，从租金账单到维保保险，驰驿把网约车租赁的日常运营收进一个清晰的工作台。</p>
           <div className="mt-8 grid max-w-lg grid-cols-3 gap-3">
             {[
-              { label: '在营车辆', value: stats?.vehicles ?? 48 },
-              { label: '认证司机', value: stats?.drivers ?? 36 },
-              { label: '活跃租约', value: stats?.active_leases ?? 23 },
+              { label: '在营车辆', value: stats?.vehicles ?? '—' },
+              { label: '认证司机', value: stats?.drivers ?? '—' },
+              { label: '活跃租约', value: stats?.active_leases ?? '—' },
             ].map((item) => (
               <div key={item.label} className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"><p className="font-mono text-xl font-semibold text-white">{item.value}</p><p className="mt-1 text-[10px] text-white/50">{item.label}</p></div>
             ))}
           </div>
         </div>
 
-        <div className="flex items-center justify-between text-[10px] text-white/40"><span className="inline-flex items-center gap-1.5"><span className={`h-1.5 w-1.5 rounded-full ${online ? 'bg-success' : 'bg-danger'}`} />{online ? '服务在线' : '服务异常'} · 上海 · 4 个门店</span><Link to="/credits" className="transition hover:text-white/80">素材与许可</Link></div>
+        <div className="flex items-center justify-between text-[10px] text-white/40"><span className="inline-flex items-center gap-1.5"><span className={`h-1.5 w-1.5 rounded-full ${online ? 'bg-success' : 'bg-danger'}`} />{online ? '服务在线' : '服务异常'} · {stats ? `多城运营 · ${stats.stores} 个门店` : '运营数据加载中'}</span><Link to="/credits" className="transition hover:text-white/80">素材与许可</Link></div>
       </div>
     </section>
   )

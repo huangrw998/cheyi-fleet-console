@@ -28,7 +28,7 @@ export function ModelFilters({
   return (
     <Card className="p-3">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
-        <SearchInput value={q} onChange={(value) => onUpdate('q', value)} placeholder="搜索品牌或车型，如秦PLUS、AION" className="lg:w-80" size="sm" debounce={250} />
+        <SearchInput value={q} onChange={(value) => onUpdate('q', value)} placeholder="搜索品牌或车型" className="lg:w-80" size="sm" debounce={250} />
         <Tabs value={body} onChange={(value) => onUpdate('body', value)} items={bodyTabs} className="flex-1" />
         <div className="flex gap-2">
           <Select value={brand} onChange={(value) => onUpdate('brand', value)} className="w-36" size="sm" aria-label="品牌">

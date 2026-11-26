@@ -9,7 +9,7 @@ export function VehicleHeader({ vehicle, activeLease, onEdit }: { vehicle: Vehic
   return (
     <Card className="overflow-hidden">
       <div className="relative h-44 overflow-hidden bg-card2 sm:h-52">
-        <img src={vehicle.model?.hero_image ?? '/media/models/byd-qin-plus-ev/wide.webp'} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
+        {vehicle.model?.hero_image ? <img src={vehicle.model.hero_image} alt="" className="h-full w-full object-cover" loading="eager" decoding="async" fetchPriority="high" /> : <div className="absolute inset-0 bg-deep" />}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 flex flex-wrap items-end justify-between gap-4 p-5">
           <div>

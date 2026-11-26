@@ -39,7 +39,7 @@ export default function DashboardPage() {
 
       <div className="flex flex-wrap items-center gap-x-5 gap-y-2 rounded-lg border border-line bg-card2/30 px-4 py-2 text-[11px] text-muted">
         <span className="inline-flex items-center gap-1.5"><span className={online ? 'h-1.5 w-1.5 rounded-full bg-success' : 'h-1.5 w-1.5 rounded-full bg-danger'} />{online ? '服务在线' : '服务异常'}</span>
-        <span>{dashboard.month_label} · 上海</span>
+        <span>{dashboard.month_label}</span>
         <span>车队规模 <span className="font-mono text-ink">{dashboard.kpis.total_vehicles}</span> 台</span>
         <span>运营门店 <span className="font-mono text-ink">{dashboard.stores.length}</span> 个</span>
         <span>本月到期未收 <span className="font-mono text-ink">{formatMoney(dashboard.kpis.monthly_receivable_cents, true)}</span></span>

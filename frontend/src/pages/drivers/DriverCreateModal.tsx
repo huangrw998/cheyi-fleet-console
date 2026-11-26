@@ -58,8 +58,8 @@ export function DriverCreateModal({
       footer={<><Button variant="secondary" onClick={onClose}>取消</Button><Button variant="primary" loading={creating} onClick={() => void submit()}>创建司机</Button></>}
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="姓名" required><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="周启明" /></Field>
-        <Field label="手机号" required><Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="139 0000 0000" /></Field>
+        <Field label="姓名" required><Input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="输入司机姓名" /></Field>
+        <Field label="手机号" required><Input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="输入 11 位手机号" /></Field>
         <Field label="身份证号"><Input value={form.id_card_no} onChange={(e) => setForm({ ...form, id_card_no: e.target.value })} placeholder="3101011990..." /></Field>
         <Field label="驾照号"><Input value={form.license_no} onChange={(e) => setForm({ ...form, license_no: e.target.value })} /></Field>
         <Field label="驾照到期日"><DatePicker value={form.license_expiry} onChange={(value) => setForm({ ...form, license_expiry: value })} /></Field>
